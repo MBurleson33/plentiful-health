@@ -427,6 +427,7 @@ nav.scrolled { box-shadow: 0 2px 24px rgba(30,26,23,0.10); }
   object-fit: cover;
   object-position: center;
   z-index: 0;
+  opacity: 25%;
 }
 
 .mission-overlay {
