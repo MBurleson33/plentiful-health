@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Page Not Found — Plentiful Health & Wellness</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<style>
+  .not-found {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 80px;
+    position: relative;
+    overflow: hidden;
+    background: var(--cream);
+  }
+
+  .nf-bg-number {
+    position: absolute;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: clamp(280px, 32vw, 480px);
+    color: var(--cream-dark);
+    line-height: 1;
+    user-select: none;
+    pointer-events: none;
+    letter-spacing: -0.04em;
+    opacity: 0;
+    animation: fadeIn 1s ease 0.1s forwards;
+  }
+
+  .nf-content {
+    position: relative;
+    z-index: 2;
+    max-width: 540px;
+  }
+
+  .nf-eyebrow {
+    font-size: 10px;
+    letter-spacing: 0.45em;
+    text-transform: uppercase;
+    color: var(--sage);
+    margin-bottom: 28px;
+    opacity: 0;
+    animation: fadeUp 0.7s ease 0.3s forwards;
+  }
+
+  .nf-headline {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: clamp(42px, 5vw, 72px);
+    line-height: 1.1;
+    color: var(--ink);
+    margin-bottom: 24px;
+    opacity: 0;
+    animation: fadeUp 0.7s ease 0.45s forwards;
+  }
+
+  .nf-headline em {
+    font-style: italic;
+    color: var(--warm-brown);
+  }
+
+  .nf-body {
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 1.85;
+    color: var(--ink-soft);
+    margin-bottom: 52px;
+    opacity: 0;
+    animation: fadeUp 0.7s ease 0.6s forwards;
+  }
+
+  .nf-actions {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    opacity: 0;
+    animation: fadeUp 0.7s ease 0.75s forwards;
+  }
+
+  .nf-divider {
+    width: 1px;
+    height: 48px;
+    background: var(--cream-dark);
+    position: absolute;
+    bottom: -32px;
+    left: 50%;
+    opacity: 0;
+    animation: fadeIn 0.6s ease 1s forwards;
+  }
+
+  .nf-logo {
+    position: absolute;
+    top: 36px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    text-decoration: none;
+    opacity: 0;
+    animation: fadeIn 0.6s ease 0.1s forwards;
+  }
+
+  .nf-logo-word {
+    display: block;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: 28px;
+    letter-spacing: 0.04em;
+    color: var(--ink);
+    white-space: nowrap;
+  }
+
+  .nf-logo-sub {
+    display: block;
+    font-size: 8px;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--warm-brown-light);
+    margin-top: 2px;
+  }
+
+  .nf-deco-line {
+    position: absolute;
+    bottom: 0;
+    left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(to right, transparent, var(--warm-brown), var(--gold), var(--warm-brown), transparent);
+    opacity: 0;
+    animation: fadeIn 1s ease 1s forwards;
+  }
+</style>
+</head>
+<body>
+
+<div class="not-found">
+
+  <!-- Logo -->
+  <a href="index.html" class="nf-logo">
+    <span class="nf-logo-word">plentiful</span>
+    <span class="nf-logo-sub">Health &amp; Wellness</span>
+  </a>
+
+  <!-- Big background 404 -->
+  <span class="nf-bg-number">404</span>
+
+  <!-- Foreground content -->
+  <div class="nf-content">
+    <p class="nf-eyebrow">Page Not Found</p>
+    <h1 class="nf-headline">This page has<br><em>wandered off.</em></h1>
+    <p class="nf-body">It looks like the page you're looking for doesn't exist or may have moved. Let's get you back on the path to your healthiest life.</p>
+    <div class="nf-actions">
+      <a href="index.html" class="btn-primary">Back to Home <span>→</span></a>
+      <a href="contact.html" class="btn-secondary">Contact Us</a>
+    </div>
+  </div>
+
+  <div class="nf-deco-line"></div>
+</div>
+
+<script>
+  // No scroll reveal needed on 404 — everything animates in on load
+</script>
+</body>
+</html>
