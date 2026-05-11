@@ -240,29 +240,19 @@ nav.scrolled { box-shadow: 0 2px 24px rgba(30,26,23,0.10); }
   display: block;
 }
 
-/* Vertical gradient scrim - transparent top, dark behind text, transparent bottom */
+/* Vertical gradient scrim - lighter, let images show more */
 .hero-scrim {
   position: absolute;
   inset: 0;
   background: linear-gradient(
     to bottom,
     transparent 0%,
-    rgba(40,36,34,0.10) 8%,
-    rgba(40,36,34,0.82) 22%,
-    rgba(40,36,34,0.88) 78%,
-    rgba(40,36,34,0.10) 92%,
+    rgba(20,16,14,0.25) 20%,
+    rgba(20,16,14,0.35) 50%,
+    rgba(20,16,14,0.25) 80%,
     transparent 100%
   );
   z-index: 1;
-}
-
-.btn-secondary--light {
-  color: var(--white);
-  border-bottom-color: rgba(255,255,255,0.6);
-}
-.btn-secondary--light:hover {
-  color: var(--gold);
-  border-bottom-color: var(--gold);
 }
 
 /* Centered content */
@@ -279,43 +269,28 @@ nav.scrolled { box-shadow: 0 2px 24px rgba(30,26,23,0.10); }
   margin-top: -6%;
 }
 
-.hero-headline {
-  font-family: 'Cormorant Garamond', serif;
-  font-weight: 300;
-  font-size: clamp(44px, 5.5vw, 84px);
-  line-height: 1.1;
+/* Dark frosted backdrop behind text only */
+.hero-content::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) translateY(-3%);
+  width: min(860px, 90%);
+  height: 380px;
+  background: rgba(20,16,14,0.62);
+  backdrop-filter: blur(2px);
+  z-index: -1;
+}
+
+.btn-secondary--light {
   color: var(--white);
-  margin-bottom: 28px;
-  opacity: 0;
-  animation: fadeUp 0.9s ease 0.5s forwards;
+  border-bottom-color: rgba(255,255,255,0.6);
 }
-.hero-headline em {
-  font-style: italic;
+.btn-secondary--light:hover {
   color: var(--gold);
+  border-bottom-color: var(--gold);
 }
-
-.hero-body {
-  font-family: 'Jost', sans-serif;
-  font-weight: 300;
-  font-size: 17px;
-  line-height: 1.8;
-  color: rgba(247,243,238,0.88);
-  max-width: 560px;
-  margin-bottom: 44px;
-  opacity: 0;
-  animation: fadeUp 0.9s ease 0.7s forwards;
-}
-
-.hero-actions {
-  display: flex;
-  gap: 24px;
-  align-items: center;
-  flex-wrap: wrap;
-  justify-content: center;
-  opacity: 0;
-  animation: fadeUp 0.9s ease 0.9s forwards;
-}
-
 
 
 /* ─── PAGE HERO (inner pages) ──────────────────────── */
