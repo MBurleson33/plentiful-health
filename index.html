@@ -116,20 +116,25 @@ body { font-family: 'Jost', sans-serif; background: var(--cream); color: var(--i
 
 /* Full-screen overlay */
 .mob-menu {
-  display: none;
   position: fixed;
   top: var(--mob-h); right: 0; bottom: 0;
   width: 280px;
   background: var(--cream);
   z-index: 8999;
+  display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: stretch;
-  gap: 0;
   box-shadow: -4px 0 32px rgba(30,26,23,0.15);
   padding-top: 16px;
+  transform: translateX(105%);
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  visibility: hidden;
 }
-.mob-menu.is-open { display: flex; }
+.mob-menu.is-open {
+  transform: translateX(0);
+  visibility: visible;
+}
 
 .mob-menu a {
   display: flex; align-items: center; justify-content: flex-start;
@@ -566,7 +571,6 @@ function closeMenu() {
   mobBtn.classList.remove('is-open');
   mobBtn.setAttribute('aria-expanded', 'false');
   mobMenu.classList.remove('is-open');
-  document.body.style.overflow = '';
 }
 
 function openMenu() {
@@ -574,7 +578,6 @@ function openMenu() {
   mobBtn.classList.add('is-open');
   mobBtn.setAttribute('aria-expanded', 'true');
   mobMenu.classList.add('is-open');
-  document.body.style.overflow = 'hidden';
 }
 
 if (mobBtn) {
