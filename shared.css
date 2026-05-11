@@ -1040,12 +1040,14 @@ footer {
     z-index: 999;
     border-bottom: 1px solid rgba(107,82,68,0.12);
     box-shadow: 0 8px 32px rgba(30,26,23,0.12);
+    max-height: calc(100vh - 64px);
+    overflow-y: auto;
   }
   .mobile-menu.open { display: block; }
   .mobile-menu > nav {
     display: flex;
     flex-direction: column;
-    padding: 8px 0 16px;
+    padding: 4px 0 12px;
   }
 
   /* Hero */
