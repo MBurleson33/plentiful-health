@@ -118,30 +118,34 @@ body { font-family: 'Jost', sans-serif; background: var(--cream); color: var(--i
 .mob-menu {
   display: none;
   position: fixed;
-  inset: 0;
+  top: var(--mob-h); right: 0; bottom: 0;
+  width: 280px;
   background: var(--cream);
   z-index: 8999;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: stretch;
   gap: 0;
+  box-shadow: -4px 0 32px rgba(30,26,23,0.15);
+  padding-top: 16px;
 }
 .mob-menu.is-open { display: flex; }
 
 .mob-menu a {
-  display: flex; align-items: center; justify-content: center;
-  width: 100%; padding: 20px 28px;
-  font-family: 'Jost', sans-serif; font-weight: 400; font-size: 16px;
+  display: flex; align-items: center; justify-content: flex-start;
+  width: 100%; padding: 18px 28px;
+  font-family: 'Jost', sans-serif; font-weight: 400; font-size: 13px;
   letter-spacing: 0.15em; text-transform: uppercase;
   color: var(--ink); text-decoration: none;
   border-bottom: 1px solid rgba(107,82,68,0.1);
   transition: color 0.2s, background 0.2s;
 }
-.mob-menu a:first-child { border-top: 1px solid rgba(107,82,68,0.1); }
 .mob-menu a:hover { color: var(--warm-brown); background: rgba(107,82,68,0.04); }
 .mob-menu .mob-cta {
-  margin-top: 32px; background: var(--ink); color: var(--cream);
-  border: none; width: calc(100% - 56px); justify-content: center;
+  margin: 24px 28px 0; width: calc(100% - 56px);
+  background: var(--ink); color: var(--cream);
+  border: none; justify-content: center;
+  min-height: 48px;
 }
 .mob-menu .mob-cta:hover { background: var(--warm-brown); color: var(--white); }
 
@@ -583,6 +587,14 @@ if (mobBtn) {
 if (mobMenu) {
   mobMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
 }
+
+// Close on backdrop tap
+document.addEventListener('click', (e) => {
+  if (mobMenu && mobMenu.classList.contains('is-open') &&
+      !mobMenu.contains(e.target) && !mobBtn.contains(e.target)) {
+    closeMenu();
+  }
+});
 
 applyLayout();
 window.addEventListener('resize', applyLayout, { passive: true });
