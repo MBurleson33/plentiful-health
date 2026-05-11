@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Medications — Plentiful Health & Wellness</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="mainNav">
+  <div class="nav-left">
+    <a href="medications.html" class="nav-link nav-link--active">Medications</a>
+    <a href="https://phr.charmtracker.com/login.sas?FACILITY_ID=3a3047be28b32bf945990f89ed0737961b09f0751b648d9898ee2e5ce9d5cc8ac81b440bc8a53a00" target="_blank" class="nav-link">Patient Portal</a>
+  </div>
+  <a href="index.html" class="nav-logo">
+    <span class="nav-logo-word">plentiful</span>
+    <span class="nav-logo-sub">Health &amp; Wellness</span>
+  </a>
+  <div class="nav-right">
+    <a href="index.html#book" class="nav-link">Book Now</a>
+    <a href="contact.html" class="nav-link cta">Contact Us</a>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-hero-content">
+    <span class="hero-eyebrow" style="animation-delay:0.1s;">Treatment Options</span>
+    <h1 class="page-hero-title">Weight Loss<br><em>Medications</em></h1>
+    <p class="page-hero-body">Physician-guided, evidence-based medications to support your weight loss journey — delivered directly to you.</p>
+  </div>
+  <div class="page-hero-deco"></div>
+</section>
+
+<!-- MEDICATIONS GRID -->
+<section class="med-section">
+  <div class="med-grid">
+    <div class="med-card reveal">
+      <div class="med-number">01</div>
+      <h3 class="med-name">Tirzepatide Plus</h3>
+      <p class="med-subtitle">Once-Weekly Weight Loss Injection</p>
+      <p class="med-body">Plentiful Health &amp; Wellness provides compounded tirzepatide for weight loss. Tirzepatide Plus is a once-weekly injection for the treatment of obesity. It is a single peptide that triggers the body's receptors for GIP and GLP-1 — two natural gut hormones. Cyanocobalamin (B12) is included to help increase energy.</p>
+      <p class="med-body">GIP has decreased food intake and increased energy expenditure, resulting in weight reductions. Combined with a GLP-1 receptor agonist, it has a more significant effect on glucose and body weight. Tirzepatide Plus is sold per vial, each of which typically lasts one month and is shipped directly to you.</p>
+      <a href="contact.html" class="med-cta">Inquire About Pricing <span class="med-cta-arrow">→</span></a>
+      <p class="med-disclaimer">**Compounded medications are not approved by the FDA for any indication and do not contain FDA reviewed package inserts that may explain usage, contraindications, warnings, precautions, adverse reactions, and drug incompatibilities. The FDA has not reviewed compounded medications for safety and efficacy.</p>
+    </div>
+    <div class="med-card reveal reveal-delay-1">
+      <div class="med-number">02</div>
+      <h3 class="med-name">More Coming Soon</h3>
+      <p class="med-subtitle">Expanding Treatment Options</p>
+      <p class="med-body">We are continually expanding our evidence-based medication offerings to provide you with the most current and effective treatment options available. Contact us to learn more about upcoming additions to our program.</p>
+      <a href="contact.html" class="med-cta">Contact Us <span class="med-cta-arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING INQUIRY FORM -->
+<section class="med-contact-section">
+  <div class="med-contact-inner">
+    <div class="med-contact-info reveal">
+      <span class="section-label">Pricing &amp; Questions</span>
+      <h2 class="contact-title">Ready to get<br><em>started?</em></h2>
+      <p style="font-weight:300; font-size:16px; line-height:1.85; color:var(--ink-soft); margin-top:24px;">Fill out the form and we'll reach out with pricing information and next steps to begin your wellness journey.</p>
+      <div class="contact-detail" style="margin-top:40px;">
+        <p class="contact-detail-label">Phone</p>
+        <p class="contact-detail-value"><a href="tel:4057783363">(405) 778-3363</a></p>
+      </div>
+      <div class="contact-detail">
+        <p class="contact-detail-label">Email</p>
+        <p class="contact-detail-value"><a href="mailto:hello@plentifulhealthok.com">hello@plentifulhealthok.com</a></p>
+      </div>
+    </div>
+    <div class="contact-form reveal reveal-delay-1">
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label" for="fname">First Name <span>(required)</span></label>
+          <input type="text" id="fname" class="form-input" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="lname">Last Name <span>(required)</span></label>
+          <input type="text" id="lname" class="form-input" required>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="email">Email <span>(required)</span></label>
+        <input type="email" id="email" class="form-input" required>
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="phone">Phone <span>(required)</span></label>
+        <input type="tel" id="phone" class="form-input" required>
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="message">Message <span>(required)</span></label>
+        <textarea id="message" class="form-textarea" required></textarea>
+      </div>
+      <button type="button" class="form-submit" onclick="handleSubmit()">Send Message</button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-left">
+    <p>© 2025 Plentiful Health &amp; Wellness</p>
+    <p style="margin-top:6px;">Oklahoma City, Oklahoma</p>
+  </div>
+  <div class="footer-logo">
+    <span class="footer-logo-word">plentiful</span>
+    <span class="footer-logo-sub">Health &amp; Wellness</span>
+  </div>
+  <div class="footer-right">
+    <a href="#" class="footer-social" aria-label="Instagram">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+    </a>
+    <a href="#" class="footer-social" aria-label="Facebook">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+    </a>
+  </div>
+</footer>
+
+<script src="shared.js"></script>
+</body>
+</html>
