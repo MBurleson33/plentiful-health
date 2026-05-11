@@ -257,11 +257,11 @@ nav.scrolled { box-shadow: 0 2px 24px rgba(30,26,23,0.10); }
 }
 
 .hero-mosaic {
-  position: absolute;
-  inset: 0;
   display: grid;
   grid-template-columns: 55% 45%;
   gap: 3px;
+  height: 100%;
+  width: 100%;
 }
 
 .hero-mosaic-left {
@@ -310,10 +310,10 @@ nav.scrolled { box-shadow: 0 2px 24px rgba(30,26,23,0.10); }
   position: absolute;
   top: 0;
   left: -1px;
-  width: 120px;
+  width: 80px;
   height: 100%;
   background: var(--cream);
-  clip-path: polygon(0 0, 60% 0, 0% 100%);
+  clip-path: polygon(0 0, 100% 0, 0% 100%);
   z-index: 2;
   pointer-events: none;
 }
