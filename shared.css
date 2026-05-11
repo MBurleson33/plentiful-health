@@ -1003,18 +1003,27 @@ footer {
     position: fixed;
     top: 0; left: 0; right: 0;
     height: 64px;
+    max-height: 64px;
     padding: 0 20px;
     background: rgba(247,243,238,0.97);
     border-bottom: 1px solid rgba(107,82,68,0.12);
     z-index: 1000;
+    overflow: hidden;
   }
 
   .nav-logo-mobile {
     display: flex;
     align-items: center;
     text-decoration: none;
+    height: 40px;
+    overflow: hidden;
   }
-  .nav-logo-mobile img { height: 32px; width: auto; }
+  .nav-logo-mobile img {
+    height: 36px;
+    width: auto;
+    max-width: 160px;
+    display: block;
+  }
 
   .nav-hamburger {
     display: flex;
@@ -1034,15 +1043,13 @@ footer {
   .mobile-menu {
     display: none;
     position: fixed;
-    top: 65px;
+    top: 64px;
     left: 0; right: 0;
     background: var(--cream);
     z-index: 998;
-    border-top: 2px solid rgba(107,82,68,0.15);
+    border-top: 1px solid rgba(107,82,68,0.12);
     border-bottom: 1px solid rgba(107,82,68,0.12);
     box-shadow: 0 8px 32px rgba(30,26,23,0.12);
-    max-height: calc(100vh - 65px);
-    overflow-y: auto;
   }
   .mobile-menu.open { display: block; }
   .mobile-menu > nav {
