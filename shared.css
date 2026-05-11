@@ -199,8 +199,7 @@ nav.scrolled { box-shadow: 0 2px 24px rgba(30,26,23,0.10); }
 }
 
 .hero-left-inner {
-  padding: 60px 80px 60px 80px;
-  max-width: 720px;
+  padding: 60px 60px 60px 80px;
   width: 100%;
 }
 
@@ -219,7 +218,7 @@ nav.scrolled { box-shadow: 0 2px 24px rgba(30,26,23,0.10); }
 .hero-headline {
   font-family: 'Cormorant Garamond', serif;
   font-weight: 300;
-  font-size: clamp(52px, 6.5vw, 100px);
+  font-size: clamp(48px, 5.8vw, 92px);
   line-height: 1.08;
   color: var(--ink);
   margin-bottom: 28px;
@@ -237,6 +236,7 @@ nav.scrolled { box-shadow: 0 2px 24px rgba(30,26,23,0.10); }
   font-size: 16px;
   line-height: 1.85;
   color: var(--ink-soft);
+  max-width: 520px;
   margin-bottom: 44px;
   opacity: 0;
   animation: fadeUp 0.7s ease 0.5s forwards;
