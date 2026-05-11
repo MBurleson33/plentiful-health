@@ -247,14 +247,22 @@ nav.scrolled { box-shadow: 0 2px 24px rgba(30,26,23,0.10); }
   background: linear-gradient(
     to bottom,
     transparent 0%,
-    rgba(40,36,34,0.10) 15%,
-    rgba(40,36,34,0.78) 30%,
-    rgba(40,36,34,0.85) 50%,
-    rgba(40,36,34,0.78) 68%,
-    rgba(40,36,34,0.10) 85%,
+    rgba(40,36,34,0.10) 8%,
+    rgba(40,36,34,0.82) 22%,
+    rgba(40,36,34,0.88) 78%,
+    rgba(40,36,34,0.10) 92%,
     transparent 100%
   );
   z-index: 1;
+}
+
+.btn-secondary--light {
+  color: var(--white);
+  border-bottom-color: rgba(255,255,255,0.6);
+}
+.btn-secondary--light:hover {
+  color: var(--gold);
+  border-bottom-color: var(--gold);
 }
 
 /* Centered content */
@@ -308,14 +316,7 @@ nav.scrolled { box-shadow: 0 2px 24px rgba(30,26,23,0.10); }
   animation: fadeUp 0.9s ease 0.9s forwards;
 }
 
-.btn-secondary--light {
-  color: rgba(247,243,238,0.88);
-  border-bottom-color: rgba(247,243,238,0.5);
-}
-.btn-secondary--light:hover {
-  color: var(--white);
-  border-bottom-color: var(--white);
-}
+
 
 /* ─── PAGE HERO (inner pages) ──────────────────────── */
 .page-hero {
@@ -427,7 +428,6 @@ nav.scrolled { box-shadow: 0 2px 24px rgba(30,26,23,0.10); }
   object-fit: cover;
   object-position: center;
   z-index: 0;
-  opacity: 25%;
 }
 
 .mission-overlay {
