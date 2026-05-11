@@ -78,8 +78,6 @@ nav {
   justify-content: space-between;
   padding: 0 60px;
   height: 80px;
-  max-height: 80px;
-  overflow: hidden;
   background: rgba(247,243,238,0.95);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(107,82,68,0.15);
@@ -136,22 +134,29 @@ nav.scrolled { box-shadow: 0 2px 24px rgba(30,26,23,0.10); }
 .nav-logo {
   text-align: center;
   text-decoration: none;
-  line-height: 1;
   display: flex;
   align-items: center;
   flex-shrink: 0;
-  height: 48px;
-  overflow: hidden;
 }
 .nav-logo-img {
-  height: 48px !important;
-  width: auto !important;
-  max-width: 140px !important;
-  max-height: 48px !important;
+  height: 44px;
+  width: auto;
   display: block;
   object-fit: contain;
-  flex-shrink: 0;
 }
+
+/* Footer logo — inverted for dark background */
+.footer-logo { text-align: center; }
+.footer-logo-img {
+  height: 52px;
+  width: auto;
+  display: block;
+  margin: 0 auto;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+  opacity: 0.85;
+}
+
 
 /* ─── HERO (home) ─────────────────────────────────── */
 #home {
