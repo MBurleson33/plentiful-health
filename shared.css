@@ -996,11 +996,24 @@ footer {
 
   /* ── Hide desktop nav ── */
   header[role="banner"] { position: static; height: 0; overflow: visible; }
-  nav { display: none !important; }
+  #mainNav { display: none !important; }
 
   /* ── Show mobile bar ── */
   .mobile-bar { display: flex; }
   .mobile-menu { display: block; }
+
+  /* Ensure mobile menu inner nav shows links */
+  .mobile-menu > nav {
+    display: flex !important;
+    flex-direction: column !important;
+    padding: 8px 0 20px;
+    position: static !important;
+    background: none !important;
+    border: none !important;
+    height: auto !important;
+    grid-template-columns: none !important;
+    overflow: visible !important;
+  }
 
   .nav-logo-mobile {
     display: flex;
@@ -1227,17 +1240,6 @@ footer {
   .mobile-menu.open {
     max-height: 360px;
     box-shadow: 0 12px 40px rgba(30,26,23,0.14);
-  }
-
-  .mobile-menu nav {
-    display: flex !important;
-    flex-direction: column !important;
-    padding: 8px 0 20px;
-    position: static !important;
-    background: none !important;
-    border: none !important;
-    height: auto !important;
-    grid-template-columns: none !important;
   }
 
   .mobile-link {
