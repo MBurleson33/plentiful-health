@@ -199,8 +199,9 @@ nav.scrolled { box-shadow: 0 2px 24px rgba(30,26,23,0.10); }
 }
 
 .hero-left-inner {
-  padding: 60px 60px 60px 80px;
-  max-width: 560px;
+  padding: 60px 80px 60px 80px;
+  max-width: 720px;
+  width: 100%;
 }
 
 .hero-eyebrow {
@@ -218,7 +219,7 @@ nav.scrolled { box-shadow: 0 2px 24px rgba(30,26,23,0.10); }
 .hero-headline {
   font-family: 'Cormorant Garamond', serif;
   font-weight: 300;
-  font-size: clamp(48px, 5.2vw, 86px);
+  font-size: clamp(52px, 6.5vw, 100px);
   line-height: 1.08;
   color: var(--ink);
   margin-bottom: 28px;
