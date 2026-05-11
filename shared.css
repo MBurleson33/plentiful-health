@@ -78,6 +78,8 @@ nav {
   justify-content: space-between;
   padding: 0 60px;
   height: 80px;
+  max-height: 80px;
+  overflow: hidden;
   background: rgba(247,243,238,0.95);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(107,82,68,0.15);
@@ -138,13 +140,17 @@ nav.scrolled { box-shadow: 0 2px 24px rgba(30,26,23,0.10); }
   display: flex;
   align-items: center;
   flex-shrink: 0;
+  height: 48px;
+  overflow: hidden;
 }
 .nav-logo-img {
-  height: 40px;
-  width: auto;
-  max-width: 160px;
+  height: 48px !important;
+  width: auto !important;
+  max-width: 140px !important;
+  max-height: 48px !important;
   display: block;
   object-fit: contain;
+  flex-shrink: 0;
 }
 
 /* ─── HERO (home) ─────────────────────────────────── */
