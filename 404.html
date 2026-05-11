@@ -3,7 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Page Not Found — Plentiful Health & Wellness</title>
+
+<!-- ─── SEO — noindex for error pages ───────────────── -->
+<title>Page Not Found | Plentiful Health & Wellness</title>
+<meta name="description" content="The page you're looking for doesn't exist. Return to Plentiful Health & Wellness to explore weight loss services in Oklahoma City, OK.">
+<meta name="robots" content="noindex, follow">
+
+<!-- ─── Open Graph ────────────────────────────────────── -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Page Not Found | Plentiful Health & Wellness">
+<meta property="og:description" content="The page you're looking for doesn't exist. Return to Plentiful Health & Wellness.">
+<meta property="og:image" content="https://www.plentifulhealthok.com/images/plenti+ful+-+edit.webp">
+<meta property="og:site_name" content="Plentiful Health & Wellness">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="shared.css">
@@ -15,7 +27,7 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 80px;
+    padding: 80px 40px;
     position: relative;
     overflow: hidden;
     background: var(--cream);
@@ -61,14 +73,10 @@
     opacity: 0;
     animation: fadeUp 0.7s ease 0.45s forwards;
   }
-
-  .nf-headline em {
-    font-style: italic;
-    color: var(--warm-brown);
-  }
+  .nf-headline em { font-style: italic; color: var(--warm-brown); }
 
   .nf-body {
-    font-weight: 300;
+    font-weight: 400;
     font-size: 16px;
     line-height: 1.85;
     color: var(--ink-soft);
@@ -87,17 +95,6 @@
     animation: fadeUp 0.7s ease 0.75s forwards;
   }
 
-  .nf-divider {
-    width: 1px;
-    height: 48px;
-    background: var(--cream-dark);
-    position: absolute;
-    bottom: -32px;
-    left: 50%;
-    opacity: 0;
-    animation: fadeIn 0.6s ease 1s forwards;
-  }
-
   .nf-logo {
     position: absolute;
     top: 36px;
@@ -107,31 +104,12 @@
     text-decoration: none;
     opacity: 0;
     animation: fadeIn 0.6s ease 0.1s forwards;
-  }
-
-  .nf-logo-word {
-    display: block;
-    font-family: 'Cormorant Garamond', serif;
-    font-weight: 300;
-    font-size: 28px;
-    letter-spacing: 0.04em;
-    color: var(--ink);
     white-space: nowrap;
-  }
-
-  .nf-logo-sub {
-    display: block;
-    font-size: 8px;
-    letter-spacing: 0.35em;
-    text-transform: uppercase;
-    color: var(--warm-brown-light);
-    margin-top: 2px;
   }
 
   .nf-deco-line {
     position: absolute;
-    bottom: 0;
-    left: 0; right: 0;
+    bottom: 0; left: 0; right: 0;
     height: 3px;
     background: linear-gradient(to right, transparent, var(--warm-brown), var(--gold), var(--warm-brown), transparent);
     opacity: 0;
@@ -141,33 +119,33 @@
 </head>
 <body>
 
-<div class="not-found">
+<!-- Skip Navigation -->
+<a href="#main-content" class="skip-link">Skip to main content</a>
 
-  <!-- Logo -->
-  <a href="index.html" class="nf-logo">
-    <span class="nf-logo-word">plentiful</span>
-    <span class="nf-logo-sub">Health &amp; Wellness</span>
-  </a>
+<main id="main-content">
+  <div class="not-found" role="main">
 
-  <!-- Big background 404 -->
-  <span class="nf-bg-number">404</span>
+    <a href="index.html" class="nf-logo" aria-label="Plentiful Health and Wellness — return to home page">
+      <img src="images/plenti+ful+-+edit.webp" alt="Plentiful Health and Wellness" class="nav-logo-img" style="height:60px;">
+    </a>
 
-  <!-- Foreground content -->
-  <div class="nf-content">
-    <p class="nf-eyebrow">Page Not Found</p>
-    <h1 class="nf-headline">This page has<br><em>wandered off.</em></h1>
-    <p class="nf-body">It looks like the page you're looking for doesn't exist or may have moved. Let's get you back on the path to your healthiest life.</p>
-    <div class="nf-actions">
-      <a href="index.html" class="btn-primary">Back to Home <span>→</span></a>
-      <a href="contact.html" class="btn-secondary">Contact Us</a>
+    <p class="nf-bg-number" aria-hidden="true">404</p>
+
+    <div class="nf-content">
+      <p class="nf-eyebrow" aria-hidden="true">Page Not Found</p>
+      <h1 class="nf-headline">This page has<br><em>wandered off.</em></h1>
+      <p class="nf-body">
+        It looks like the page you're looking for doesn't exist or may have moved. Let's get you back on the path to your healthiest life.
+      </p>
+      <nav class="nf-actions" aria-label="Error page navigation">
+        <a href="index.html" class="btn-primary">Back to Home <span aria-hidden="true">→</span></a>
+        <a href="contact.html" class="btn-secondary">Contact Us</a>
+      </nav>
     </div>
+
+    <div class="nf-deco-line" aria-hidden="true"></div>
   </div>
+</main>
 
-  <div class="nf-deco-line"></div>
-</div>
-
-<script>
-  // No scroll reveal needed on 404 — everything animates in on load
-</script>
 </body>
 </html>
