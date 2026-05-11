@@ -942,3 +942,256 @@ footer {
 .reveal-delay-1 { transition-delay: 0.15s; }
 .reveal-delay-2 { transition-delay: 0.3s; }
 .reveal-delay-3 { transition-delay: 0.45s; }
+
+/* ─── MOBILE NAV & HAMBURGER ────────────────────────── */
+.nav-logo-mobile { display: none; }
+.nav-hamburger   { display: none; }
+.mobile-menu     { display: none; }
+
+@media (max-width: 768px) {
+
+  /* ── NAV ── */
+  .nav-left,
+  .nav-right,
+  .nav-logo { display: none !important; }
+
+  nav {
+    grid-template-columns: auto 1fr auto;
+    padding: 0 20px;
+    height: 70px;
+  }
+
+  nav::before { height: 70px; }
+
+  .nav-logo-mobile {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    grid-column: 1;
+  }
+
+  .nav-logo-mobile .nav-logo-img {
+    height: 34px;
+    width: auto;
+  }
+
+  .nav-hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    grid-column: 3;
+    position: relative;
+    z-index: 1;
+    min-width: 44px;
+    min-height: 44px;
+    align-items: center;
+  }
+
+  .nav-hamburger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--ink);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    transform-origin: center;
+  }
+
+  .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+  .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  .mobile-menu {
+    display: block;
+    position: fixed;
+    top: 70px;
+    left: 0; right: 0;
+    background: var(--cream);
+    border-bottom: 1px solid rgba(107,82,68,0.15);
+    z-index: 999;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, box-shadow 0.3s;
+  }
+
+  .mobile-menu.open {
+    max-height: 400px;
+    box-shadow: 0 8px 32px rgba(30,26,23,0.12);
+  }
+
+  .mobile-menu nav {
+    display: flex;
+    flex-direction: column;
+    padding: 8px 0 20px;
+    position: static;
+    background: none;
+    border: none;
+    height: auto;
+    grid-template-columns: none;
+  }
+
+  .mobile-link {
+    padding: 0 24px;
+    font-family: 'Jost', sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(107,82,68,0.08);
+    transition: color 0.2s, background 0.2s;
+    min-height: 52px;
+    display: flex;
+    align-items: center;
+  }
+
+  .mobile-link:last-child { border-bottom: none; }
+  .mobile-link:hover { color: var(--warm-brown); background: rgba(107,82,68,0.04); }
+
+  .mobile-link--cta {
+    margin: 12px 24px 0;
+    background: var(--ink);
+    color: var(--cream) !important;
+    justify-content: center;
+    min-height: 48px;
+    border-bottom: none !important;
+  }
+  .mobile-link--cta:hover { background: var(--warm-brown); }
+
+  /* ── HOME HERO ── */
+  #home {
+    display: flex !important;
+    padding-top: 70px;
+    height: auto;
+    min-height: 100svh;
+    align-items: center;
+    background: var(--cream);
+  }
+
+  .hero-right { display: none !important; }
+
+  .hero-left {
+    width: 100%;
+    padding: 0;
+  }
+
+  .hero-left-inner {
+    padding: 52px 28px 60px;
+    width: 100%;
+  }
+
+  .hero-eyebrow { margin-bottom: 16px; }
+  .hero-headline { font-size: clamp(38px, 10vw, 58px); line-height: 1.1; }
+  .hero-body { max-width: 100%; font-size: 15px; margin-bottom: 36px; }
+  .hero-actions { flex-direction: column; align-items: flex-start; gap: 16px; }
+  .hero-actions .btn-primary { width: 100%; justify-content: center; }
+
+  /* ── MISSION ── */
+  .mission-inner {
+    grid-template-columns: 1fr !important;
+    padding: 72px 28px !important;
+    gap: 48px !important;
+  }
+
+  .mission-quote { font-size: clamp(22px, 6vw, 32px); }
+
+  /* ── PROVIDER ── */
+  #provider {
+    grid-template-columns: 1fr !important;
+    padding: 72px 28px !important;
+    gap: 40px !important;
+  }
+
+  .provider-img { aspect-ratio: 4/3; object-position: top center; }
+  .provider-accent { display: none; }
+  .provider-name { font-size: clamp(32px, 8vw, 48px); }
+
+  /* ── BOOK NOW ── */
+  .book-section {
+    padding: 72px 28px !important;
+  }
+
+  .book-embed-wrap { width: 100%; }
+
+  /* ── MEDICATIONS PAGE ── */
+  .med-section { padding: 60px 28px 80px !important; }
+  .med-grid { grid-template-columns: 1fr !important; gap: 20px !important; }
+  .med-card { padding: 40px 28px !important; }
+  .med-card-body { padding: 32px 28px 40px !important; }
+  .med-card-img-wrap { height: 220px !important; }
+  .med-number { font-size: 52px !important; }
+
+  .med-contact-section { padding: 72px 28px !important; }
+  .med-contact-inner {
+    grid-template-columns: 1fr !important;
+    gap: 48px !important;
+  }
+
+  /* ── PAGE HEROES (inner pages) ── */
+  .page-hero {
+    padding: 100px 28px 60px !important;
+    min-height: auto !important;
+  }
+
+  .page-hero-title { font-size: clamp(42px, 10vw, 64px) !important; }
+  .page-hero-body { font-size: 15px !important; }
+
+  /* ── CONTACT PAGE ── */
+  .contact-section {
+    grid-template-columns: 1fr !important;
+    padding: 72px 28px !important;
+    gap: 48px !important;
+  }
+
+  .contact-title { font-size: clamp(32px, 8vw, 48px); margin-bottom: 28px; }
+  .contact-detail-value { font-size: 18px; }
+
+  .form-row { grid-template-columns: 1fr !important; }
+  .form-submit { width: 100%; text-align: center; justify-content: center; }
+
+  /* ── FOOTER ── */
+  footer {
+    grid-template-columns: 1fr !important;
+    text-align: center;
+    gap: 32px;
+    padding: 48px 28px !important;
+  }
+
+  .footer-right { justify-content: center; }
+  .footer-left { text-align: center; }
+
+  /* ── 404 PAGE ── */
+  .not-found { padding: 40px 28px; }
+  .nf-headline { font-size: clamp(36px, 10vw, 56px); }
+  .nf-body { font-size: 15px; }
+  .nf-actions { flex-direction: column; align-items: center; gap: 16px; }
+  .nf-actions .btn-primary { width: 100%; justify-content: center; }
+  .nf-bg-number { font-size: clamp(160px, 40vw, 280px); }
+  .nf-logo { top: 24px; }
+
+  /* ── SECTION HEADERS ── */
+  .section-title { font-size: clamp(32px, 8vw, 48px); }
+
+  /* ── GENERAL ── */
+  .btn-primary { min-height: 52px; }
+  .btn-secondary { min-height: 44px; }
+}
+
+/* Extra small phones */
+@media (max-width: 380px) {
+  .hero-headline { font-size: 9vw; }
+  .hero-left-inner { padding: 40px 20px 52px; }
+  .mission-inner,
+  #provider,
+  .contact-section,
+  .med-contact-inner,
+  .med-section,
+  .book-section,
+  .page-hero,
+  footer { padding-left: 20px !important; padding-right: 20px !important; }
+}
