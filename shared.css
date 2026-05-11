@@ -944,87 +944,91 @@ footer {
 .reveal-delay-3 { transition-delay: 0.45s; }
 
 /* ─── MOBILE NAV & HAMBURGER ────────────────────────── */
+.mobile-bar      { display: none; }
 .nav-logo-mobile { display: none; }
 .nav-hamburger   { display: none; }
 .mobile-menu     { display: none; }
 
 @media (max-width: 768px) {
 
-  /* ── NAV ── */
-  .nav-left,
-  .nav-right,
-  .nav-logo { display: none !important; }
+  /* ── Hide desktop nav, show mobile bar ── */
+  nav { display: none !important; }
 
-  nav {
-    grid-template-columns: auto 1fr auto;
+  .mobile-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    height: 64px;
     padding: 0 20px;
-    height: 70px;
+    background: rgba(247,243,238,0.97);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(107,82,68,0.12);
+    z-index: 1000;
   }
-
-  nav::before { height: 70px; }
 
   .nav-logo-mobile {
     display: flex;
     align-items: center;
     text-decoration: none;
-    grid-column: 1;
   }
 
   .nav-logo-mobile .nav-logo-img {
-    height: 34px;
+    height: 32px;
     width: auto;
+    display: block;
   }
 
   .nav-hamburger {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     gap: 5px;
     background: none;
     border: none;
     cursor: pointer;
-    padding: 8px;
-    grid-column: 3;
-    position: relative;
-    z-index: 1;
-    min-width: 44px;
-    min-height: 44px;
-    align-items: center;
+    width: 44px;
+    height: 44px;
+    padding: 0;
   }
 
   .nav-hamburger span {
     display: block;
-    width: 24px;
+    width: 22px;
     height: 2px;
     background: var(--ink);
+    border-radius: 1px;
     transition: transform 0.3s ease, opacity 0.3s ease;
     transform-origin: center;
   }
 
   .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-  .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+  .nav-hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
   .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
+  /* ── Mobile slide-down menu ── */
   .mobile-menu {
     display: block;
     position: fixed;
-    top: 70px;
+    top: 64px;
     left: 0; right: 0;
     background: var(--cream);
-    border-bottom: 1px solid rgba(107,82,68,0.15);
+    border-bottom: 1px solid rgba(107,82,68,0.12);
     z-index: 999;
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.4s ease, box-shadow 0.3s;
+    transition: max-height 0.4s cubic-bezier(0.4,0,0.2,1);
   }
 
   .mobile-menu.open {
-    max-height: 400px;
-    box-shadow: 0 8px 32px rgba(30,26,23,0.12);
+    max-height: 380px;
+    box-shadow: 0 12px 40px rgba(30,26,23,0.14);
   }
 
   .mobile-menu nav {
-    display: flex;
+    display: flex !important;
     flex-direction: column;
     padding: 8px 0 20px;
     position: static;
@@ -1035,18 +1039,18 @@ footer {
   }
 
   .mobile-link {
-    padding: 0 24px;
+    padding: 0 28px;
     font-family: 'Jost', sans-serif;
     font-weight: 400;
     font-size: 13px;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
     color: var(--ink-soft);
     text-decoration: none;
     border-bottom: 1px solid rgba(107,82,68,0.08);
     transition: color 0.2s, background 0.2s;
     min-height: 52px;
-    display: flex;
+    display: flex !important;
     align-items: center;
   }
 
@@ -1054,19 +1058,20 @@ footer {
   .mobile-link:hover { color: var(--warm-brown); background: rgba(107,82,68,0.04); }
 
   .mobile-link--cta {
-    margin: 12px 24px 0;
-    background: var(--ink);
+    margin: 12px 28px 4px;
+    background: var(--ink) !important;
     color: var(--cream) !important;
     justify-content: center;
     min-height: 48px;
     border-bottom: none !important;
+    padding: 0 28px;
   }
-  .mobile-link--cta:hover { background: var(--warm-brown); }
+  .mobile-link--cta:hover { background: var(--warm-brown) !important; }
 
   /* ── HOME HERO ── */
   #home {
     display: flex !important;
-    padding-top: 70px;
+    padding-top: 64px;
     height: auto;
     min-height: 100svh;
     align-items: center;
@@ -1074,22 +1079,21 @@ footer {
   }
 
   .hero-right { display: none !important; }
-
-  .hero-left {
-    width: 100%;
-    padding: 0;
-  }
-
-  .hero-left-inner {
-    padding: 52px 28px 60px;
-    width: 100%;
-  }
-
+  .hero-left { width: 100%; padding: 0; }
+  .hero-left-inner { padding: 52px 28px 60px; width: 100%; }
   .hero-eyebrow { margin-bottom: 16px; }
-  .hero-headline { font-size: clamp(38px, 10vw, 58px); line-height: 1.1; }
+  .hero-headline { font-size: clamp(36px, 10vw, 56px); line-height: 1.1; }
   .hero-body { max-width: 100%; font-size: 15px; margin-bottom: 36px; }
-  .hero-actions { flex-direction: column; align-items: flex-start; gap: 16px; }
+  .hero-actions { flex-direction: column; align-items: flex-start; gap: 14px; }
   .hero-actions .btn-primary { width: 100%; justify-content: center; }
+
+  /* ── PAGE HEROES (inner pages) ── */
+  .page-hero {
+    padding: 104px 28px 60px !important;
+    min-height: auto !important;
+  }
+  .page-hero-title { font-size: clamp(40px, 10vw, 60px) !important; }
+  .page-hero-body { font-size: 15px !important; }
 
   /* ── MISSION ── */
   .mission-inner {
@@ -1097,7 +1101,6 @@ footer {
     padding: 72px 28px !important;
     gap: 48px !important;
   }
-
   .mission-quote { font-size: clamp(22px, 6vw, 32px); }
 
   /* ── PROVIDER ── */
@@ -1106,92 +1109,71 @@ footer {
     padding: 72px 28px !important;
     gap: 40px !important;
   }
-
-  .provider-img { aspect-ratio: 4/3; object-position: top center; }
+  .provider-img { aspect-ratio: 4/3; }
   .provider-accent { display: none; }
   .provider-name { font-size: clamp(32px, 8vw, 48px); }
 
   /* ── BOOK NOW ── */
-  .book-section {
-    padding: 72px 28px !important;
-  }
-
+  .book-section { padding: 72px 28px !important; }
   .book-embed-wrap { width: 100%; }
 
-  /* ── MEDICATIONS PAGE ── */
+  /* ── MEDICATIONS ── */
   .med-section { padding: 60px 28px 80px !important; }
   .med-grid { grid-template-columns: 1fr !important; gap: 20px !important; }
-  .med-card { padding: 40px 28px !important; }
-  .med-card-body { padding: 32px 28px 40px !important; }
-  .med-card-img-wrap { height: 220px !important; }
+  .med-card { padding: 36px 24px !important; }
+  .med-card-body { padding: 28px 24px 36px !important; }
+  .med-card-img-wrap { height: 200px !important; }
   .med-number { font-size: 52px !important; }
-
   .med-contact-section { padding: 72px 28px !important; }
-  .med-contact-inner {
-    grid-template-columns: 1fr !important;
-    gap: 48px !important;
-  }
+  .med-contact-inner { grid-template-columns: 1fr !important; gap: 48px !important; }
 
-  /* ── PAGE HEROES (inner pages) ── */
-  .page-hero {
-    padding: 100px 28px 60px !important;
-    min-height: auto !important;
-  }
-
-  .page-hero-title { font-size: clamp(42px, 10vw, 64px) !important; }
-  .page-hero-body { font-size: 15px !important; }
-
-  /* ── CONTACT PAGE ── */
+  /* ── CONTACT ── */
   .contact-section {
     grid-template-columns: 1fr !important;
     padding: 72px 28px !important;
     gap: 48px !important;
   }
-
-  .contact-title { font-size: clamp(32px, 8vw, 48px); margin-bottom: 28px; }
+  .contact-title { font-size: clamp(32px, 8vw, 48px); margin-bottom: 24px; }
   .contact-detail-value { font-size: 18px; }
-
   .form-row { grid-template-columns: 1fr !important; }
-  .form-submit { width: 100%; text-align: center; justify-content: center; }
+  .form-submit { width: 100%; align-self: stretch; }
 
   /* ── FOOTER ── */
   footer {
     grid-template-columns: 1fr !important;
     text-align: center;
-    gap: 32px;
+    gap: 28px;
     padding: 48px 28px !important;
   }
-
   .footer-right { justify-content: center; }
   .footer-left { text-align: center; }
+  .footer-logo { margin: 0 auto; }
 
-  /* ── 404 PAGE ── */
+  /* ── 404 ── */
   .not-found { padding: 40px 28px; }
-  .nf-headline { font-size: clamp(36px, 10vw, 56px); }
+  .nf-bg-number { font-size: clamp(140px, 38vw, 240px); }
+  .nf-headline { font-size: clamp(34px, 9vw, 52px); }
   .nf-body { font-size: 15px; }
   .nf-actions { flex-direction: column; align-items: center; gap: 16px; }
   .nf-actions .btn-primary { width: 100%; justify-content: center; }
-  .nf-bg-number { font-size: clamp(160px, 40vw, 280px); }
-  .nf-logo { top: 24px; }
-
-  /* ── SECTION HEADERS ── */
-  .section-title { font-size: clamp(32px, 8vw, 48px); }
+  .nf-logo { top: 20px; }
 
   /* ── GENERAL ── */
+  .section-title { font-size: clamp(30px, 8vw, 46px); }
   .btn-primary { min-height: 52px; }
-  .btn-secondary { min-height: 44px; }
 }
 
-/* Extra small phones */
-@media (max-width: 380px) {
-  .hero-headline { font-size: 9vw; }
-  .hero-left-inner { padding: 40px 20px 52px; }
+/* ── Extra small (≤390px) ── */
+@media (max-width: 390px) {
+  .hero-headline { font-size: 9.5vw; }
+  .hero-left-inner,
   .mission-inner,
   #provider,
   .contact-section,
-  .med-contact-inner,
   .med-section,
+  .med-contact-section,
   .book-section,
-  .page-hero,
   footer { padding-left: 20px !important; padding-right: 20px !important; }
+  .page-hero { padding-left: 20px !important; padding-right: 20px !important; }
+  .mobile-bar { padding: 0 16px; }
 }
