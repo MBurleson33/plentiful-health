@@ -184,7 +184,7 @@ nav.scrolled { box-shadow: 0 2px 24px rgba(30,26,23,0.10); }
   height: 100vh;
   min-height: 640px;
   display: grid;
-  grid-template-columns: 48% 52%;
+  grid-template-columns: 55% 45%;
   position: relative;
   overflow: hidden;
 }
