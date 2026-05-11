@@ -240,15 +240,15 @@ nav.scrolled { box-shadow: 0 2px 24px rgba(30,26,23,0.10); }
   display: block;
 }
 
-/* Dark gradient scrim over entire mosaic */
+/* Dark diagonal scrim over entire mosaic */
 .hero-scrim {
   position: absolute;
   inset: 0;
   background: linear-gradient(
     135deg,
-    rgba(20,16,14,0.75) 0%,
-    rgba(20,16,14,0.45) 50%,
-    rgba(20,16,14,0.55) 100%
+    rgba(20,16,14,0.88) 0%,
+    rgba(20,16,14,0.68) 50%,
+    rgba(20,16,14,0.75) 100%
   );
   z-index: 1;
 }
@@ -427,7 +427,7 @@ nav.scrolled { box-shadow: 0 2px 24px rgba(30,26,23,0.10); }
 .mission-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(30,26,23,0.72);
+  background: rgba(30,26,23,0.86);
   z-index: 1;
 }
 
