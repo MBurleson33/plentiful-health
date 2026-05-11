@@ -36,6 +36,9 @@ if (hamburger && mobileMenu) {
     e.stopPropagation();
     const opening = !hamburger.classList.contains('open');
     if (opening) {
+      // Set top dynamically based on actual bar height
+      const barHeight = mobileBar ? mobileBar.getBoundingClientRect().height : 64;
+      mobileMenu.style.top = barHeight + 'px';
       hamburger.classList.add('open');
       hamburger.setAttribute('aria-expanded', 'true');
       mobileMenu.classList.add('open');
