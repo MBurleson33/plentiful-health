@@ -6,13 +6,50 @@ if (nav) {
   }, { passive: true });
 }
 
+// Hamburger menu toggle
+const hamburger = document.getElementById('navHamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+
+function closeMobileMenu() {
+  if (!hamburger || !mobileMenu) return;
+  hamburger.classList.remove('open');
+  hamburger.setAttribute('aria-expanded', 'false');
+  mobileMenu.classList.remove('open');
+  mobileMenu.setAttribute('aria-hidden', 'true');
+}
+
+if (hamburger && mobileMenu) {
+  hamburger.addEventListener('click', () => {
+    const isOpen = hamburger.classList.contains('open');
+    if (isOpen) {
+      closeMobileMenu();
+    } else {
+      hamburger.classList.add('open');
+      hamburger.setAttribute('aria-expanded', 'true');
+      mobileMenu.classList.add('open');
+      mobileMenu.setAttribute('aria-hidden', 'false');
+    }
+  });
+
+  // Close on mobile link click
+  mobileMenu.querySelectorAll('.mobile-link').forEach(link => {
+    link.addEventListener('click', closeMobileMenu);
+  });
+
+  // Close on outside click
+  document.addEventListener('click', (e) => {
+    const mobileBar = document.querySelector('.mobile-bar');
+    if (mobileBar && !mobileBar.contains(e.target) && !mobileMenu.contains(e.target)) {
+      closeMobileMenu();
+    }
+  });
+}
+
 // Scroll reveal — respects prefers-reduced-motion
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
 const reveals = document.querySelectorAll('.reveal');
 
 if (prefersReducedMotion) {
-  // Show everything immediately for reduced-motion users
   reveals.forEach(el => el.classList.add('visible'));
 } else {
   const observer = new IntersectionObserver((entries) => {
@@ -26,14 +63,12 @@ if (prefersReducedMotion) {
   reveals.forEach(el => observer.observe(el));
 }
 
-// Form submit — announces result to screen readers via aria-live region
+// Form submit
 function handleSubmit(statusId) {
   const btn = document.querySelector('.form-submit');
   const status = document.getElementById(statusId || 'form-status');
-
   if (!btn) return;
 
-  // Basic validation feedback
   const required = document.querySelectorAll('[aria-required="true"]');
   let allFilled = true;
   required.forEach(field => {
@@ -55,12 +90,10 @@ function handleSubmit(statusId) {
   btn.textContent = 'Sending…';
   btn.disabled = true;
 
-  // Simulate send (replace with real form submission)
   setTimeout(() => {
     btn.textContent = 'Message Sent ✓';
     btn.style.background = 'var(--sage)';
     if (status) status.textContent = 'Your message has been sent successfully. We will be in touch soon.';
-
     setTimeout(() => {
       btn.textContent = 'Send Message';
       btn.style.background = '';
