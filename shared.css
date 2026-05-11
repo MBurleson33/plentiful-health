@@ -178,13 +178,14 @@ nav.scrolled { box-shadow: 0 2px 24px rgba(30,26,23,0.10); }
 /* Footer logo — inverted for dark background */
 .footer-logo { text-align: center; }
 .footer-logo-img {
-  height: 52px;
+  height: 60px;
   width: auto;
   display: block;
   margin: 0 auto;
   object-fit: contain;
   filter: brightness(0) invert(1);
   opacity: 0.85;
+  mix-blend-mode: screen;
 }
 
 
