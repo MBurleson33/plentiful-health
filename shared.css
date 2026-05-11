@@ -1034,20 +1034,21 @@ footer {
   .mobile-menu {
     display: none;
     position: fixed;
-    top: 64px;
+    top: 65px;
     left: 0; right: 0;
     background: var(--cream);
-    z-index: 999;
+    z-index: 998;
+    border-top: 2px solid rgba(107,82,68,0.15);
     border-bottom: 1px solid rgba(107,82,68,0.12);
     box-shadow: 0 8px 32px rgba(30,26,23,0.12);
-    max-height: calc(100vh - 64px);
+    max-height: calc(100vh - 65px);
     overflow-y: auto;
   }
   .mobile-menu.open { display: block; }
   .mobile-menu > nav {
     display: flex;
     flex-direction: column;
-    padding: 4px 0 12px;
+    padding: 0;
   }
 
   /* Hero */
