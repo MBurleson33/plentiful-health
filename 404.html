@@ -3,146 +3,149 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<!-- ─── SEO — noindex for error pages ───────────────── -->
 <title>Page Not Found | Plentiful Health & Wellness</title>
 <meta name="description" content="The page you're looking for doesn't exist. Return to Plentiful Health & Wellness to explore weight loss services in Oklahoma City, OK.">
 <meta name="robots" content="noindex, follow">
-
-<!-- ─── Open Graph ────────────────────────────────────── -->
-<meta property="og:type" content="website">
-<meta property="og:title" content="Page Not Found | Plentiful Health & Wellness">
-<meta property="og:description" content="The page you're looking for doesn't exist. Return to Plentiful Health & Wellness.">
-<meta property="og:image" content="https://www.plentifulhealthok.com/images/plenti+ful+-+edit.webp">
-<meta property="og:site_name" content="Plentiful Health & Wellness">
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="shared.css">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-  .not-found {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 80px 40px;
-    position: relative;
-    overflow: hidden;
-    background: var(--cream);
-  }
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --cream:      #f7f3ee;
+  --cream-dark: #ede6da;
+  --ink:        #1e1a17;
+  --ink-soft:   #3d3530;
+  --warm-brown: #6b5244;
+  --warm-brown-lt: #8c6e5e;
+  --sage:       #4a6e5a;
+  --gold:       #c4a97d;
+  --white:      #ffffff;
+}
+html { scroll-behavior: smooth; }
+body { font-family: 'Jost', sans-serif; background: var(--cream); color: var(--ink); overflow-x: hidden; font-size: 18px; min-height: 100vh; display: flex; flex-direction: column; }
 
-  .nf-bg-number {
-    position: absolute;
-    font-family: 'Cormorant Garamond', serif;
-    font-weight: 300;
-    font-size: clamp(280px, 32vw, 480px);
-    color: var(--cream-dark);
-    line-height: 1;
-    user-select: none;
-    pointer-events: none;
-    letter-spacing: -0.04em;
-    opacity: 0;
-    animation: fadeIn 1s ease 0.1s forwards;
-  }
+.skip { position: absolute; top: -100%; left: 16px; background: var(--ink); color: var(--cream); padding: 10px 20px; z-index: 9999; text-decoration: none; }
+.skip:focus { top: 16px; }
 
-  .nf-content {
-    position: relative;
-    z-index: 2;
-    max-width: 540px;
-  }
+/* ── 404 CONTENT ── */
+.not-found {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 80px 40px;
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+}
 
-  .nf-eyebrow {
-    font-size: 10px;
-    letter-spacing: 0.45em;
-    text-transform: uppercase;
-    color: var(--sage);
-    margin-bottom: 28px;
-    opacity: 0;
-    animation: fadeUp 0.7s ease 0.3s forwards;
-  }
+.nf-logo {
+  position: absolute;
+  top: 40px; left: 50%;
+  transform: translateX(-50%);
+  text-decoration: none;
+  opacity: 0; animation: fadeIn 0.6s ease 0.1s forwards;
+}
+.nf-logo img { height: 52px; width: auto; }
 
-  .nf-headline {
-    font-family: 'Cormorant Garamond', serif;
-    font-weight: 300;
-    font-size: clamp(42px, 5vw, 72px);
-    line-height: 1.1;
-    color: var(--ink);
-    margin-bottom: 24px;
-    opacity: 0;
-    animation: fadeUp 0.7s ease 0.45s forwards;
-  }
-  .nf-headline em { font-style: italic; color: var(--warm-brown); }
+.nf-bg-number {
+  position: absolute;
+  font-family: 'Cormorant Garamond', serif; font-weight: 300;
+  font-size: clamp(240px, 35vw, 480px);
+  color: var(--cream-dark); line-height: 1;
+  user-select: none; pointer-events: none; letter-spacing: -0.04em;
+  opacity: 0; animation: fadeIn 1s ease 0.2s forwards;
+}
 
-  .nf-body {
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 1.85;
-    color: var(--ink-soft);
-    margin-bottom: 52px;
-    opacity: 0;
-    animation: fadeUp 0.7s ease 0.6s forwards;
-  }
+.nf-content {
+  position: relative; z-index: 2;
+  max-width: 560px;
+}
 
-  .nf-actions {
-    display: flex;
-    gap: 20px;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    opacity: 0;
-    animation: fadeUp 0.7s ease 0.75s forwards;
-  }
+.nf-eyebrow {
+  font-size: 10px; letter-spacing: 0.45em; text-transform: uppercase;
+  color: var(--sage); margin-bottom: 28px;
+  opacity: 0; animation: fadeUp 0.7s ease 0.4s forwards;
+}
 
-  .nf-logo {
-    position: absolute;
-    top: 36px;
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
-    text-decoration: none;
-    opacity: 0;
-    animation: fadeIn 0.6s ease 0.1s forwards;
-    white-space: nowrap;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+.nf-headline {
+  font-family: 'Cormorant Garamond', serif; font-weight: 300;
+  font-size: clamp(42px, 5vw, 70px); line-height: 1.1;
+  color: var(--ink); margin-bottom: 24px;
+  opacity: 0; animation: fadeUp 0.7s ease 0.55s forwards;
+}
+.nf-headline em { font-style: italic; color: var(--warm-brown); }
 
-  .nf-deco-line {
-    position: absolute;
-    bottom: 0; left: 0; right: 0;
-    height: 3px;
-    background: linear-gradient(to right, transparent, var(--warm-brown), var(--gold), var(--warm-brown), transparent);
-    opacity: 0;
-    animation: fadeIn 1s ease 1s forwards;
-  }
+.nf-body {
+  font-weight: 300; font-size: 18px; line-height: 1.85;
+  color: var(--ink-soft); margin-bottom: 52px;
+  opacity: 0; animation: fadeUp 0.7s ease 0.7s forwards;
+}
+
+.nf-actions {
+  display: flex; gap: 20px; align-items: center; justify-content: center; flex-wrap: wrap;
+  opacity: 0; animation: fadeUp 0.7s ease 0.85s forwards;
+}
+
+.btn-p {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: var(--ink); color: var(--cream); text-decoration: none;
+  font-size: 12px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase;
+  padding: 15px 32px; min-height: 50px; transition: background 0.2s, transform 0.2s;
+}
+.btn-p:hover { background: var(--warm-brown); transform: translateY(-2px); }
+
+.btn-s {
+  font-size: 12px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--ink-soft); text-decoration: none;
+  border-bottom: 1px solid var(--warm-brown-lt); padding-bottom: 3px;
+  transition: color 0.2s;
+}
+.btn-s:hover { color: var(--warm-brown); }
+
+.nf-deco-line {
+  position: absolute; bottom: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(to right, transparent, var(--warm-brown), var(--gold), var(--warm-brown), transparent);
+  opacity: 0; animation: fadeIn 1s ease 1s forwards;
+}
+
+@keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; }
+}
+
+@media (max-width: 480px) {
+  .nf-actions { flex-direction: column; align-items: center; }
+  .btn-p { width: 100%; justify-content: center; }
+  .nf-logo { top: 24px; }
+  .nf-logo img { height: 40px; }
+}
 </style>
 </head>
 <body>
 
-<!-- Skip Navigation -->
-<a href="#main-content" class="skip-link">Skip to main content</a>
+<a href="#main" class="skip">Skip to main content</a>
 
-<main id="main-content">
-  <div class="not-found" role="main">
+<main id="main">
+  <div class="not-found">
 
-    <a href="index.html" class="nf-logo" aria-label="Plentiful Health and Wellness — return to home page">
-      <img src="images/plenti+ful+-+edit.png" alt="Plentiful Health and Wellness" class="nav-logo-img" style="height:50px;">
+    <a href="index.html" class="nf-logo" aria-label="Plentiful Health and Wellness — return to home">
+      <img src="images/plenti+ful+-+edit.png" alt="Plentiful Health and Wellness">
     </a>
 
     <p class="nf-bg-number" aria-hidden="true">404</p>
 
     <div class="nf-content">
       <p class="nf-eyebrow" aria-hidden="true">Page Not Found</p>
-      <h1 class="nf-headline">This page has<br><em>wandered off.</em></h1>
-      <p class="nf-body">
-        It looks like the page you're looking for doesn't exist or may have moved. Let's get you back on the path to your healthiest life.
-      </p>
+      <h1 class="nf-headline">This page has <em>wandered off.</em></h1>
+      <p class="nf-body">It looks like the page you're looking for doesn't exist or may have moved. Let's get you back on the path to your healthiest life.</p>
       <nav class="nf-actions" aria-label="Error page navigation">
-        <a href="index.html" class="btn-primary">Back to Home <span aria-hidden="true">→</span></a>
-        <a href="contact.html" class="btn-secondary">Contact Us</a>
+        <a href="index.html" class="btn-p">Back to Home <span aria-hidden="true">→</span></a>
+        <a href="contact.html" class="btn-s">Contact Us</a>
       </nav>
     </div>
 
