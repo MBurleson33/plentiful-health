@@ -311,24 +311,64 @@ body { font-family: 'Jost', sans-serif; background: var(--cream); color: var(--i
    PROVIDER
 ══════════════════════════════════════ */
 #provider {
-  padding: 140px 80px;
   display: grid;
-  grid-template-columns: 420px 1fr;
-  gap: 100px;
-  align-items: center;
+  grid-template-columns: 1fr 1fr;
+  min-height: 700px;
   background: var(--cream);
 }
-.provider-img-wrap { position: relative; }
-.provider-img { width: 100%; aspect-ratio: 3/4; object-fit: cover; object-position: top center; display: block; }
-.provider-accent {
-  position: absolute; bottom: -24px; right: -24px;
-  width: 140px; height: 140px;
-  border: 1px solid var(--warm-brown); z-index: -1;
+
+.provider-img-wrap {
+  position: relative;
+  overflow: hidden;
 }
-.provider-label { font-size: 10px; letter-spacing: 0.45em; text-transform: uppercase; color: var(--sage); display: block; margin-bottom: 20px; }
-.provider-name { font-family: 'Cormorant Garamond', serif; font-weight: 400; font-size: clamp(36px, 3.5vw, 54px); line-height: 1.1; color: var(--ink); margin-bottom: 10px; }
-.provider-title { font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--warm-brown); font-weight: 500; margin-bottom: 36px; padding-bottom: 36px; border-bottom: 1px solid var(--cream-dark); }
-.provider-bio p { font-weight: 300; font-size: 18px; line-height: 1.85; color: var(--ink-soft); margin-bottom: 18px; }
+
+.provider-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+}
+
+.provider-accent {
+  position: absolute;
+  bottom: 32px; right: -16px;
+  width: 100px; height: 100px;
+  border: 1px solid var(--warm-brown);
+  z-index: 2; pointer-events: none;
+}
+
+.provider-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 80px 80px 80px 72px;
+  background: var(--cream-dark);
+}
+
+.provider-label {
+  font-size: 10px; letter-spacing: 0.45em; text-transform: uppercase;
+  color: var(--sage); display: block; margin-bottom: 20px;
+}
+
+.provider-name {
+  font-family: 'Cormorant Garamond', serif; font-weight: 400;
+  font-size: clamp(42px, 4vw, 64px); line-height: 1.05;
+  color: var(--ink); margin-bottom: 10px;
+}
+
+.provider-title {
+  font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--warm-brown); font-weight: 500;
+  margin-bottom: 36px; padding-bottom: 36px;
+  border-bottom: 1px solid rgba(107,82,68,0.2);
+}
+
+.provider-bio p {
+  font-weight: 300; font-size: 17px; line-height: 1.9;
+  color: var(--ink-soft); margin-bottom: 20px;
+}
+.provider-bio p:last-child { margin-bottom: 0; }
 
 /* ══════════════════════════════════════
    BOOK NOW
@@ -418,8 +458,10 @@ footer {
   .hero-brand-mark { display: none; }
 
   #mission .mission-body { grid-template-columns: 1fr; padding: 72px 24px; gap: 48px; }
-  #provider { grid-template-columns: 1fr; padding: 72px 24px; gap: 40px; }
+  #provider { grid-template-columns: 1fr; min-height: auto; }
+  .provider-img-wrap { height: 400px; }
   .provider-accent { display: none; }
+  .provider-content { padding: 52px 24px 64px; }
   #book { padding: 72px 24px; }
   footer { grid-template-columns: 1fr; text-align: center; padding: 48px 24px; gap: 28px; }
   .footer-social { justify-content: center; }
@@ -539,7 +581,7 @@ footer {
       <img src="images/ASALE-Headshot.webp" alt="Ashley Sale, PA-C — Physician Assistant, Founder and Co-Owner of Plentiful Health and Wellness" class="provider-img" loading="lazy">
       <div class="provider-accent" aria-hidden="true"></div>
     </div>
-    <div>
+    <div class="provider-content">
       <span class="provider-label reveal" aria-hidden="true">Meet Your Provider</span>
       <h2 class="provider-name reveal reveal-d1" id="provider-heading">Ashley Sale</h2>
       <p class="provider-title reveal reveal-d1">PA-C &nbsp;·&nbsp; Founder &amp; Co-Owner</p>
