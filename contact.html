@@ -3,166 +3,449 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<!-- ─── Primary SEO ──────────────────────────────────── -->
 <title>Contact Us | Plentiful Health & Wellness — Oklahoma City, OK</title>
 <meta name="description" content="Contact Plentiful Health & Wellness in Oklahoma City, OK. Call (405) 778-3363 or email hello@plentifulhealthok.com to ask questions, inquire about pricing, or start your wellness journey.">
-<meta name="keywords" content="contact Plentiful Health Wellness, weight loss clinic Oklahoma City contact, OKC wellness clinic phone, tirzepatide pricing Oklahoma">
-<meta name="author" content="Plentiful Health & Wellness">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://www.plentifulhealthok.com/contact.html">
-
-<!-- ─── Open Graph ────────────────────────────────────── -->
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://www.plentifulhealthok.com/contact.html">
 <meta property="og:title" content="Contact Us | Plentiful Health & Wellness — Oklahoma City, OK">
-<meta property="og:description" content="Reach out to Plentiful Health & Wellness. Call (405) 778-3363 or send us a message to begin your weight loss journey.">
+<meta property="og:description" content="Reach out to Plentiful Health & Wellness. Call (405) 778-3363 or send us a message.">
 <meta property="og:image" content="https://www.plentifulhealthok.com/images/plenti+ful+-+edit.png">
-<meta property="og:locale" content="en_US">
-<meta property="og:site_name" content="Plentiful Health & Wellness">
-
-<!-- ─── Twitter Card ─────────────────────────────────── -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Contact Plentiful Health & Wellness | Oklahoma City, OK">
-<meta name="twitter:description" content="Call (405) 778-3363 or send us a message to start your weight loss journey.">
-<meta name="twitter:image" content="https://www.plentifulhealthok.com/images/plenti+ful+-+edit.png">
-
-<!-- ─── Structured Data: Contact Page ───────────────── -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "ContactPage",
-  "name": "Contact Plentiful Health & Wellness",
-  "url": "https://www.plentifulhealthok.com/contact.html",
-  "mainEntity": {
-    "@type": "MedicalBusiness",
-    "name": "Plentiful Health & Wellness",
-    "telephone": "+14057783363",
-    "email": "hello@plentifulhealthok.com",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Oklahoma City",
-      "addressRegion": "OK",
-      "addressCountry": "US"
-    }
-  }
-}
-</script>
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="shared.css">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+/* ── RESET ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --cream:      #f7f3ee;
+  --cream-dark: #ede6da;
+  --ink:        #1e1a17;
+  --ink-soft:   #3d3530;
+  --warm-brown: #6b5244;
+  --warm-brown-lt: #8c6e5e;
+  --sage:       #4a6e5a;
+  --gold:       #c4a97d;
+  --white:      #ffffff;
+  --nav-h:      90px;
+  --mob-h:      60px;
+  --margin:     140px;
+}
+
+html { scroll-behavior: smooth; }
+body { font-family: 'Jost', sans-serif; background: var(--cream); color: var(--ink); overflow-x: hidden; font-size: 18px; }
+
+/* ── SKIP ── */
+.skip { position: absolute; top: -100%; left: 16px; background: var(--ink); color: var(--cream); padding: 10px 20px; z-index: 9999; text-decoration: none; font-size: 14px; }
+.skip:focus { top: 16px; }
+
+/* ══════════════════════════════════════
+   DESKTOP NAV
+══════════════════════════════════════ */
+.desk-nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: var(--nav-h);
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  padding: 0 var(--margin);
+  z-index: 500;
+}
+.desk-nav::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: rgba(247,243,238,0.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(107,82,68,0.15);
+  z-index: 0;
+}
+.desk-nav > * { position: relative; z-index: 1; }
+.nav-left  { display: flex; gap: 40px; align-items: center; }
+.nav-right { display: flex; gap: 40px; align-items: center; justify-content: flex-end; }
+.nav-link {
+  font-size: 13px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--ink-soft); text-decoration: none; padding: 4px 0; position: relative;
+  transition: color 0.2s;
+}
+.nav-link::after {
+  content: ''; position: absolute; bottom: -3px; left: 0; right: 0; height: 1px;
+  background: var(--warm-brown); transform: scaleX(0); transform-origin: left; transition: transform 0.3s;
+}
+.nav-link:hover { color: var(--warm-brown); }
+.nav-link:hover::after, .nav-link.active::after { transform: scaleX(1); }
+.nav-link.active { color: var(--warm-brown); }
+.nav-link.cta {
+  background: var(--ink); color: var(--cream); padding: 10px 24px;
+  transition: background 0.2s;
+}
+.nav-link.cta::after { display: none; }
+.nav-link.cta:hover, .nav-link.cta.active { background: var(--warm-brown); }
+.nav-logo { text-decoration: none; display: flex; align-items: center; justify-content: center; }
+.nav-logo img { height: 62px; width: auto; object-fit: contain; }
+
+/* ══════════════════════════════════════
+   MOBILE NAV
+══════════════════════════════════════ */
+.mob-bar {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: var(--mob-h);
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  background: var(--cream);
+  border-bottom: 1px solid rgba(107,82,68,0.15);
+  z-index: 9000;
+}
+.mob-bar a { display: flex; align-items: center; text-decoration: none; }
+.mob-bar img { height: 34px; width: auto; }
+.mob-btn {
+  display: flex; flex-direction: column; gap: 5px; justify-content: center; align-items: center;
+  width: 44px; height: 44px; background: none; border: none; cursor: pointer; padding: 0;
+}
+.mob-btn span {
+  display: block; width: 22px; height: 2px; background: var(--ink); border-radius: 1px;
+  transition: transform 0.3s, opacity 0.3s; transform-origin: center;
+}
+.mob-btn.is-open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.mob-btn.is-open span:nth-child(2) { opacity: 0; }
+.mob-btn.is-open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+.mob-menu {
+  position: fixed;
+  top: var(--mob-h); right: 0; bottom: 0;
+  width: 280px;
+  background: var(--cream);
+  z-index: 8999;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  box-shadow: -4px 0 32px rgba(30,26,23,0.15);
+  padding-top: 16px;
+  transform: translateX(105%);
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+              visibility 0s linear 0.35s;
+  visibility: hidden;
+}
+.mob-menu.is-open {
+  transform: translateX(0);
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+              visibility 0s linear 0s;
+  visibility: visible;
+}
+.mob-menu a {
+  display: flex; align-items: center;
+  padding: 0 28px; min-height: 52px;
+  font-family: 'Jost', sans-serif; font-weight: 400; font-size: 13px;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--ink); text-decoration: none;
+  border-bottom: 1px solid rgba(107,82,68,0.1);
+  transition: color 0.2s, background 0.2s;
+}
+.mob-menu a:hover { color: var(--warm-brown); background: rgba(107,82,68,0.04); }
+.mob-menu a:last-child { border-bottom: none; }
+.mob-menu .mob-cta {
+  margin: 24px 28px 0; width: calc(100% - 56px);
+  background: var(--ink); color: var(--cream);
+  border: none; justify-content: center; min-height: 48px;
+}
+.mob-menu .mob-cta:hover { background: var(--warm-brown); color: var(--white); }
+
+/* ══════════════════════════════════════
+   PAGE HERO
+══════════════════════════════════════ */
+.page-hero {
+  padding-top: var(--nav-h);
+  min-height: 380px;
+  background: var(--cream-dark);
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  padding-left: var(--margin);
+  padding-right: var(--margin);
+  padding-bottom: 72px;
+}
+
+.page-hero-deco {
+  position: absolute;
+  right: -80px; bottom: -80px;
+  width: 420px; height: 420px;
+  border-radius: 50%;
+  background: rgba(107,82,68,0.07);
+  pointer-events: none;
+}
+
+.page-hero-eyebrow {
+  font-size: 10px; font-weight: 400; letter-spacing: 0.5em; text-transform: uppercase;
+  color: var(--sage); margin-bottom: 24px; display: block;
+  opacity: 0; animation: fadeUp 0.7s ease 0.2s forwards;
+}
+
+.page-hero-title {
+  font-family: 'Cormorant Garamond', serif; font-weight: 300;
+  font-size: clamp(52px, 6vw, 88px); line-height: 1.0;
+  color: var(--ink);
+  opacity: 0; animation: fadeUp 0.7s ease 0.35s forwards;
+}
+.page-hero-title em { font-style: italic; color: var(--warm-brown); display: block; }
+
+.page-hero-body {
+  font-size: 18px; font-weight: 300; line-height: 1.8;
+  color: var(--ink-soft); max-width: 480px; margin-top: 24px;
+  opacity: 0; animation: fadeUp 0.7s ease 0.5s forwards;
+}
+
+/* ══════════════════════════════════════
+   CONTACT SECTION
+══════════════════════════════════════ */
+.contact-section {
+  padding: 100px var(--margin);
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 80px;
+  align-items: start;
+  background: var(--cream);
+}
+
+/* Left info column */
+.contact-info {}
+
+.contact-detail { margin-bottom: 40px; }
+.contact-detail-label {
+  font-size: 10px; letter-spacing: 0.4em; text-transform: uppercase;
+  color: var(--warm-brown); font-weight: 500; margin-bottom: 8px; display: block;
+}
+.contact-detail-value {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 26px; color: var(--ink); line-height: 1.3;
+}
+.contact-detail-value a {
+  color: inherit; text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s, color 0.2s;
+}
+.contact-detail-value a:hover { color: var(--warm-brown); border-bottom-color: var(--warm-brown); }
+
+.contact-social { display: flex; gap: 12px; margin-top: 8px; }
+.contact-social a {
+  width: 44px; height: 44px;
+  border: 1px solid rgba(107,82,68,0.3);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--ink); text-decoration: none;
+  transition: border-color 0.2s, background 0.2s, color 0.2s;
+}
+.contact-social a:hover { border-color: var(--warm-brown); background: var(--warm-brown); color: var(--white); }
+
+.contact-book {
+  margin-top: 48px; padding-top: 48px;
+  border-top: 1px solid var(--cream-dark);
+}
+
+.btn-p {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: var(--ink); color: var(--cream); text-decoration: none;
+  font-size: 12px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase;
+  padding: 15px 32px; min-height: 50px;
+  transition: background 0.2s, transform 0.2s;
+}
+.btn-p:hover { background: var(--warm-brown); transform: translateY(-2px); }
+
+/* Right form column */
+.contact-form { display: flex; flex-direction: column; gap: 0; }
+
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.form-group { margin-bottom: 16px; }
+
+.form-label {
+  display: block; font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase;
+  color: var(--ink); font-weight: 500; margin-bottom: 8px;
+}
+.form-label .req { color: var(--warm-brown); font-style: italic; letter-spacing: 0; text-transform: none; margin-left: 4px; }
+
+.form-input, .form-textarea {
+  width: 100%;
+  background: var(--cream-dark);
+  border: 2px solid transparent;
+  padding: 14px 18px;
+  font-family: 'Jost', sans-serif; font-weight: 300; font-size: 16px;
+  color: var(--ink); outline: none;
+  transition: border-color 0.2s, background 0.2s;
+  appearance: none; border-radius: 0;
+  min-height: 52px;
+}
+.form-input:focus, .form-textarea:focus {
+  border-color: var(--warm-brown); background: var(--white);
+}
+.form-textarea { min-height: 160px; resize: vertical; }
+
+.form-submit {
+  margin-top: 8px;
+  background: var(--ink); color: var(--cream);
+  border: none; padding: 16px 40px;
+  font-family: 'Jost', sans-serif; font-weight: 500; font-size: 12px;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  cursor: pointer; align-self: flex-start; min-height: 52px;
+  transition: background 0.25s, transform 0.2s;
+}
+.form-submit:hover { background: var(--warm-brown); transform: translateY(-2px); }
+.sr-status { position: absolute; width:1px; height:1px; overflow:hidden; clip:rect(0,0,0,0); }
+
+/* ══════════════════════════════════════
+   FOOTER
+══════════════════════════════════════ */
+footer {
+  background: var(--ink); color: var(--cream);
+  padding: 60px var(--margin);
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center; gap: 40px;
+}
+.footer-left { font-size: 14px; font-weight: 400; color: rgba(247,243,238,0.65); }
+.footer-left a { color: inherit; text-decoration: none; display: block; transition: color 0.2s; }
+.footer-left a:hover { color: var(--cream); }
+.footer-copy { margin-top: 12px; font-size: 11px; opacity: 0.5; }
+.footer-logo { display: flex; align-items: center; justify-content: center; }
+.footer-logo img { height: 56px; width: auto; filter: brightness(0) invert(1); opacity: 0.85; }
+.footer-social { display: flex; gap: 14px; justify-content: flex-end; align-items: center; }
+.footer-social a {
+  width: 44px; height: 44px; border: 1px solid rgba(247,243,238,0.25);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--cream); text-decoration: none; transition: border-color 0.2s, background 0.2s;
+}
+.footer-social a:hover { border-color: var(--gold); background: rgba(196,169,125,0.12); }
+
+/* ══════════════════════════════════════
+   ANIMATIONS
+══════════════════════════════════════ */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.8s ease, transform 0.8s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-d1 { transition-delay: 0.15s; }
+.reveal-d2 { transition-delay: 0.3s; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+  .reveal { opacity: 1; transform: none; }
+}
+
+/* ══════════════════════════════════════
+   RESPONSIVE
+══════════════════════════════════════ */
+@media (max-width: 1024px) {
+  :root { --margin: 32px; }
+  .desk-nav { display: none; }
+  .mob-bar  { display: flex; }
+
+  .page-hero { padding-top: calc(var(--mob-h) + 52px); min-height: auto; padding-bottom: 52px; }
+  .page-hero-title { font-size: clamp(42px, 9vw, 64px); }
+
+  .contact-section {
+    grid-template-columns: 1fr;
+    padding: 64px var(--margin);
+    gap: 56px;
+  }
+
+  .form-row { grid-template-columns: 1fr; }
+  .form-submit { width: 100%; }
+
+  footer { grid-template-columns: 1fr; text-align: center; padding: 48px var(--margin); gap: 28px; }
+  .footer-social { justify-content: center; }
+}
+</style>
 </head>
 <body>
 
-<!-- Skip Navigation -->
-<a href="#main-content" class="skip-link">Skip to main content</a>
+<a href="#main" class="skip">Skip to main content</a>
 
-<!-- HEADER / NAV -->
-<header role="banner">
-  <nav id="mainNav" aria-label="Main navigation">
+<!-- DESKTOP NAV -->
+<header>
+  <nav class="desk-nav" id="deskNav" aria-label="Main navigation">
     <div class="nav-left">
       <a href="medications.html" class="nav-link">Medications</a>
-      <a href="https://phr.charmtracker.com/login.sas?FACILITY_ID=3a3047be28b32bf945990f89ed0737961b09f0751b648d9898ee2e5ce9d5cc8ac81b440bc8a53a00"
-         target="_blank" rel="noopener noreferrer"
-         class="nav-link"
-         aria-label="Patient Portal — opens in new tab">Patient Portal</a>
+      <a href="https://phr.charmtracker.com/login.sas?FACILITY_ID=3a3047be28b32bf945990f89ed0737961b09f0751b648d9898ee2e5ce9d5cc8ac81b440bc8a53a00" target="_blank" rel="noopener noreferrer" class="nav-link">Patient Portal</a>
     </div>
-    <a href="index.html" class="nav-logo" aria-label="Plentiful Health and Wellness — return to home page">
-      <img src="images/plenti+ful+-+edit.png" alt="Plentiful Health and Wellness" class="nav-logo-img">
+    <a href="index.html" class="nav-logo" aria-label="Plentiful Health and Wellness — home">
+      <img src="images/plenti+ful+-+edit.png" alt="Plentiful Health and Wellness">
     </a>
     <div class="nav-right">
       <a href="index.html#book" class="nav-link">Book Now</a>
-      <a href="contact.html" class="nav-link cta nav-link--active" aria-current="page">Contact Us</a>
+      <a href="contact.html" class="nav-link cta active">Contact Us</a>
     </div>
   </nav>
-
 </header>
 
-  <!-- Mobile bar (shown only on mobile via CSS) -->
-  <div class="mobile-bar">
-    <a href="index.html" class="nav-logo-mobile" aria-label="Plentiful Health and Wellness — home">
-      <img src="images/plenti+ful+-+edit.png" alt="Plentiful Health and Wellness" class="nav-logo-img">
-    </a>
-    <button class="nav-hamburger" id="navHamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileMenu">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
+<!-- MOBILE BAR -->
+<div class="mob-bar" id="mobBar">
+  <a href="index.html" aria-label="Home">
+    <img src="images/plenti+ful+-+edit.png" alt="Plentiful Health and Wellness">
+  </a>
+  <button class="mob-btn" id="mobBtn" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</div>
 
-  <!-- Mobile slide-down menu -->
-  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Mobile navigation" aria-hidden="true">
-    <nav aria-label="Mobile navigation links">
-      <a href="medications.html" class="mobile-link">Medications</a>
-      <a href="https://phr.charmtracker.com/login.sas?FACILITY_ID=3a3047be28b32bf945990f89ed0737961b09f0751b648d9898ee2e5ce9d5cc8ac81b440bc8a53a00" target="_blank" rel="noopener noreferrer" class="mobile-link" aria-label="Patient Portal — opens in new tab">Patient Portal</a>
-      <a href="index.html#book" class="mobile-link">Book Now</a>
-      <a href="contact.html" class="mobile-link mobile-link--cta">Contact Us</a>
-    </nav>
-  </div>
+<!-- MOBILE MENU -->
+<div class="mob-menu" id="mobMenu">
+  <a href="medications.html">Medications</a>
+  <a href="https://phr.charmtracker.com/login.sas?FACILITY_ID=3a3047be28b32bf945990f89ed0737961b09f0751b648d9898ee2e5ce9d5cc8ac81b440bc8a53a00" target="_blank" rel="noopener noreferrer">Patient Portal</a>
+  <a href="index.html#book">Book Now</a>
+  <a href="contact.html" class="mob-cta">Contact Us</a>
+</div>
 
-
-
-<main id="main-content">
+<main id="main">
 
   <!-- PAGE HERO -->
-  <section class="page-hero page-hero--light" aria-labelledby="page-hero-heading">
-    <div class="page-hero-content">
-      <p class="hero-eyebrow" style="animation-delay:0.1s; color:var(--sage);" aria-hidden="true">We're Here For You</p>
-      <h1 class="page-hero-title page-hero-title--dark" id="page-hero-heading">
-        Get in<br><em>Touch</em>
-      </h1>
-      <p class="page-hero-body page-hero-body--dark">
-        We'd love to hear from you. Reach out with questions, pricing inquiries, or to start your wellness journey.
-      </p>
+  <section class="page-hero" aria-labelledby="page-title">
+    <div>
+      <span class="page-hero-eyebrow">We're Here For You</span>
+      <h1 class="page-hero-title" id="page-title">Get in <em>Touch</em></h1>
+      <p class="page-hero-body">We'd love to hear from you. Reach out with questions, pricing inquiries, or to start your wellness journey.</p>
     </div>
-    <div class="page-hero-deco page-hero-deco--light" aria-hidden="true"></div>
+    <div class="page-hero-deco" aria-hidden="true"></div>
   </section>
 
-  <!-- CONTACT SECTION -->
-  <section id="contact" class="contact-section" aria-labelledby="contact-heading">
-    <div class="contact-info">
-      <h2 id="contact-heading" class="sr-only">Contact Information</h2>
+  <!-- CONTACT -->
+  <section class="contact-section">
 
-      <div class="contact-detail reveal">
-        <p class="contact-detail-label">Phone</p>
+    <!-- Info -->
+    <div class="contact-info reveal">
+      <div class="contact-detail">
+        <span class="contact-detail-label">Phone</span>
         <p class="contact-detail-value">
-          <a href="tel:+14057783363" aria-label="Call us at (405) 778-3363">(405) 778-3363</a>
+          <a href="tel:+14057783363">(405) 778-3363</a>
         </p>
       </div>
-
-      <div class="contact-detail reveal reveal-delay-1">
-        <p class="contact-detail-label">Email</p>
+      <div class="contact-detail">
+        <span class="contact-detail-label">Email</span>
         <p class="contact-detail-value">
-          <a href="mailto:hello@plentifulhealthok.com" aria-label="Email us at hello@plentifulhealthok.com">hello@plentifulhealthok.com</a>
+          <a href="mailto:hello@plentifulhealthok.com">hello@plentifulhealthok.com</a>
         </p>
       </div>
-
-      <div class="contact-detail reveal reveal-delay-2">
-        <p class="contact-detail-label">Follow Along</p>
-        <div style="display:flex; gap:12px; margin-top:10px;">
-          <a href="#" class="footer-social" aria-label="Follow Plentiful Health and Wellness on Instagram" style="border-color:rgba(30,26,23,0.2); color:var(--ink);">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" focusable="false">
-              <rect x="2" y="2" width="20" height="20" rx="5"/>
-              <circle cx="12" cy="12" r="4"/>
-              <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
-            </svg>
+      <div class="contact-detail">
+        <span class="contact-detail-label">Follow Along</span>
+        <div class="contact-social">
+          <a href="https://www.instagram.com/plentifulhealthok/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
           </a>
-          <a href="#" class="footer-social" aria-label="Follow Plentiful Health and Wellness on Facebook" style="border-color:rgba(30,26,23,0.2); color:var(--ink);">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" focusable="false">
-              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
-            </svg>
+          <a href="https://www.facebook.com/profile.php?id=61556691487444" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
           </a>
         </div>
       </div>
-
-      <div class="contact-detail reveal reveal-delay-2" style="margin-top:40px; padding-top:40px; border-top: 1px solid var(--cream-dark);">
-        <a href="index.html#book" class="btn-primary">
-          Book a Consultation <span aria-hidden="true">→</span>
-        </a>
+      <div class="contact-book">
+        <a href="index.html#book" class="btn-p">Book a Consultation <span aria-hidden="true">→</span></a>
       </div>
     </div>
 
-    <div class="contact-form reveal reveal-delay-1" role="form" aria-labelledby="form-heading">
-      <h2 id="form-heading" class="sr-only">Send Us a Message</h2>
+    <!-- Form -->
+    <div class="contact-form reveal reveal-d1" role="form" aria-label="Contact form">
       <div class="form-row">
         <div class="form-group">
           <label class="form-label" for="fname">First Name <span class="req">(required)</span></label>
@@ -185,9 +468,10 @@
         <label class="form-label" for="message">Message <span class="req">(required)</span></label>
         <textarea id="message" name="message" class="form-textarea" required aria-required="true"></textarea>
       </div>
-      <div role="status" aria-live="polite" id="form-status" class="sr-only"></div>
-      <button type="button" class="form-submit" onclick="handleSubmit('form-status')">Send Message</button>
+      <div class="sr-status" role="status" aria-live="polite" id="form-status"></div>
+      <button type="button" class="form-submit" onclick="handleSubmit()">Send Message</button>
     </div>
+
   </section>
 
 </main>
@@ -195,28 +479,106 @@
 <!-- FOOTER -->
 <footer role="contentinfo">
   <div class="footer-left">
-    <address style="font-style:normal;">
-      <p><a href="tel:+14057783363" style="color:inherit; text-decoration:none;">(405) 778-3363</a></p>
-      <p style="margin-top:6px;"><a href="mailto:hello@plentifulhealthok.com" style="color:inherit; text-decoration:none;">hello@plentifulhealthok.com</a></p>
-    </address>
-    <p style="margin-top:12px; font-size:11px; opacity:0.5;">© 2026 Plentiful Health &amp; Wellness</p>
+    <a href="tel:+14057783363">(405) 778-3363</a>
+    <a href="mailto:hello@plentifulhealthok.com">hello@plentifulhealthok.com</a>
+    <p class="footer-copy">© 2026 Plentiful Health &amp; Wellness</p>
   </div>
   <div class="footer-logo">
-    <img src="images/plenti+ful+-+edit.png" alt="Plentiful Health and Wellness" class="footer-logo-img" loading="lazy">
+    <img src="images/plenti+ful+-+edit.png" alt="Plentiful Health and Wellness" loading="lazy">
   </div>
-  <nav class="footer-right" aria-label="Social media links">
-    <a href="https://www.instagram.com/plentifulhealthok/" target="_blank" rel="noopener noreferrer" class="footer-social" aria-label="Follow us on Instagram (opens in new tab)">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" focusable="false"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+  <div class="footer-social">
+    <a href="https://www.instagram.com/plentifulhealthok/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
     </a>
-    <a href="https://www.facebook.com/profile.php?id=61556691487444" target="_blank" rel="noopener noreferrer" class="footer-social" aria-label="Follow us on Facebook (opens in new tab)">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" focusable="false"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+    <a href="https://www.facebook.com/profile.php?id=61556691487444" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
     </a>
-    <a href="mailto:hello@plentifulhealthok.com" class="footer-social" aria-label="Email Plentiful Health and Wellness">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" focusable="false"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
+    <a href="mailto:hello@plentifulhealthok.com" aria-label="Email us">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
     </a>
-  </nav>
+  </div>
 </footer>
 
-<script src="shared.js"></script>
+<script>
+// Mobile nav
+const mobBar  = document.getElementById('mobBar');
+const mobBtn  = document.getElementById('mobBtn');
+const mobMenu = document.getElementById('mobMenu');
+const deskNav = document.getElementById('deskNav');
+
+function applyLayout() {
+  const isMobile = window.innerWidth <= 1024;
+  if (deskNav) deskNav.style.display = isMobile ? 'none' : '';
+  if (mobBar)  mobBar.style.display  = isMobile ? 'flex' : 'none';
+}
+
+function closeMenu() {
+  if (!mobBtn || !mobMenu) return;
+  mobBtn.classList.remove('is-open');
+  mobBtn.setAttribute('aria-expanded', 'false');
+  mobMenu.classList.remove('is-open');
+}
+
+if (mobBtn) {
+  mobBtn.addEventListener('click', () => {
+    const opening = !mobBtn.classList.contains('is-open');
+    if (opening) {
+      mobBtn.classList.add('is-open');
+      mobBtn.setAttribute('aria-expanded', 'true');
+      mobMenu.classList.add('is-open');
+    } else {
+      closeMenu();
+    }
+  });
+}
+
+if (mobMenu) {
+  mobMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+}
+
+document.addEventListener('click', (e) => {
+  if (mobMenu && mobMenu.classList.contains('is-open') &&
+      mobBar && !mobBar.contains(e.target) && !mobMenu.contains(e.target)) {
+    closeMenu();
+  }
+});
+
+applyLayout();
+window.addEventListener('resize', applyLayout, { passive: true });
+
+// Nav scroll
+if (deskNav) {
+  window.addEventListener('scroll', () => {
+    deskNav.style.boxShadow = window.scrollY > 40 ? '0 2px 24px rgba(30,26,23,0.1)' : '';
+  }, { passive: true });
+}
+
+// Scroll reveal
+const reveals = document.querySelectorAll('.reveal');
+const ro = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); ro.unobserve(e.target); } });
+}, { threshold: 0.1 });
+reveals.forEach(el => ro.observe(el));
+
+// Form
+function handleSubmit() {
+  const btn    = document.querySelector('.form-submit');
+  const status = document.getElementById('form-status');
+  const required = document.querySelectorAll('[aria-required="true"]');
+  let allFilled = true;
+  required.forEach(f => {
+    if (!f.value.trim()) { allFilled = false; f.style.borderColor = 'var(--warm-brown)'; }
+    else { f.style.borderColor = ''; }
+  });
+  if (!allFilled) { if (status) status.textContent = 'Please fill in all required fields.'; return; }
+  btn.textContent = 'Sending…'; btn.disabled = true;
+  setTimeout(() => {
+    btn.textContent = 'Message Sent ✓'; btn.style.background = '#4a6e5a';
+    if (status) status.textContent = 'Your message has been sent. We will be in touch soon.';
+    setTimeout(() => { btn.textContent = 'Send Message'; btn.style.background = ''; btn.disabled = false; if (status) status.textContent = ''; }, 5000);
+  }, 800);
+}
+</script>
+
 </body>
 </html>
