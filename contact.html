@@ -158,17 +158,32 @@ body { font-family: 'Jost', sans-serif; background: var(--cream); color: var(--i
    PAGE HERO
 ══════════════════════════════════════ */
 .page-hero {
-  padding-top: var(--nav-h);
-  min-height: 380px;
-  background: var(--cream-dark);
-  display: flex;
-  align-items: center;
+  padding-top: calc(var(--nav-h) + 60px);
+  min-height: 520px;
   position: relative;
   overflow: hidden;
+  display: flex;
+  align-items: center;
   padding-left: var(--margin);
   padding-right: var(--margin);
-  padding-bottom: 72px;
+  padding-bottom: 80px;
 }
+.page-hero-content { max-width: 50%; position: relative; z-index: 2; }
+.page-hero-bg {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%; object-fit: cover; object-position: center 40%;
+  display: block; z-index: 0;
+}
+.page-hero-scrim {
+  position: absolute; inset: 0; z-index: 1;
+  background: radial-gradient(
+    ellipse 70% 65% at 30% 55%,
+    rgba(28,22,18,0.88) 0%,
+    rgba(28,22,18,0.60) 50%,
+    rgba(28,22,18,0.15) 100%
+  );
+}
+.page-hero-content { position: relative; z-index: 2; }
 
 .page-hero-deco {
   position: absolute;
@@ -181,21 +196,21 @@ body { font-family: 'Jost', sans-serif; background: var(--cream); color: var(--i
 
 .page-hero-eyebrow {
   font-size: 10px; font-weight: 400; letter-spacing: 0.5em; text-transform: uppercase;
-  color: var(--sage); margin-bottom: 24px; display: block;
+  color: var(--gold); margin-bottom: 24px; display: block;
   opacity: 0; animation: fadeUp 0.7s ease 0.2s forwards;
 }
 
 .page-hero-title {
   font-family: 'Cormorant Garamond', serif; font-weight: 300;
   font-size: clamp(52px, 6vw, 88px); line-height: 1.0;
-  color: var(--ink);
+  color: var(--white);
   opacity: 0; animation: fadeUp 0.7s ease 0.35s forwards;
 }
-.page-hero-title em { font-style: italic; color: var(--warm-brown); display: block; }
+.page-hero-title em { font-style: italic; color: var(--gold); display: block; }
 
 .page-hero-body {
   font-size: 18px; font-weight: 300; line-height: 1.8;
-  color: var(--ink-soft); max-width: 480px; margin-top: 24px;
+  color: rgba(247,243,238,0.82); max-width: 480px; margin-top: 24px;
   opacity: 0; animation: fadeUp 0.7s ease 0.5s forwards;
 }
 
@@ -343,7 +358,8 @@ footer {
   .desk-nav { display: none; }
   .mob-bar  { display: flex; }
 
-  .page-hero { padding-top: calc(var(--mob-h) + 52px); min-height: auto; padding-bottom: 52px; }
+  .page-hero { padding-top: calc(var(--mob-h) + 48px) !important; min-height: auto; padding-bottom: 52px; }
+  .page-hero-content { max-width: 100% !important; }
   .page-hero-title { font-size: clamp(42px, 9vw, 64px); }
 
   .contact-section {
@@ -403,12 +419,13 @@ footer {
 
   <!-- PAGE HERO -->
   <section class="page-hero" aria-labelledby="page-title">
-    <div>
+    <img src="images/Contact.jpg" class="page-hero-bg" alt="" aria-hidden="true">
+    <div class="page-hero-scrim" aria-hidden="true"></div>
+    <div class="page-hero-content">
       <span class="page-hero-eyebrow">We're Here For You</span>
       <h1 class="page-hero-title" id="page-title">Get in <em>Touch</em></h1>
       <p class="page-hero-body">We'd love to hear from you. Reach out with questions, pricing inquiries, or to start your wellness journey.</p>
     </div>
-    <div class="page-hero-deco" aria-hidden="true"></div>
   </section>
 
   <!-- CONTACT -->
