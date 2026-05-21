@@ -436,7 +436,6 @@ footer {
 ══════════════════════════════════════ */
 @media (max-width: 1024px) {
   :root { --margin: 32px; }
-
   .desk-nav { display: none; }
   .mob-bar  { display: flex; }
 
@@ -448,8 +447,7 @@ footer {
     align-items: center;
     background: var(--cream);
   }
-  #home { padding-top: var(--mob-h); }
-  .hero-text { padding: 40px 28px; }
+  .hero-text { padding: 40px var(--margin); }
   .hero-h1 { font-size: clamp(40px, 10vw, 64px); }
   .hero-h1 em { display: inline; }
   .hero-p { font-size: 15px; margin-bottom: 36px; }
@@ -458,13 +456,13 @@ footer {
   .btn-s { align-self: center; }
   .hero-brand-mark { display: none; }
 
-  #mission .mission-body { grid-template-columns: 1fr; padding: 72px 32px; gap: 48px; }
+  #mission .mission-body { grid-template-columns: 1fr; padding: 72px var(--margin); gap: 48px; }
   #provider { grid-template-columns: 1fr; min-height: auto; }
-  .provider-img-wrap { height: 400px; }
+  .provider-img-wrap { height: 420px; }
   .provider-accent { display: none; }
-  .provider-content { padding: 52px 24px 64px; }
-  #book { padding: 72px 24px; }
-  footer { grid-template-columns: 1fr; text-align: center; padding: 48px 24px; gap: 28px; }
+  .provider-content { padding: 52px var(--margin) 64px; }
+  #book { padding: 72px var(--margin); }
+  footer { grid-template-columns: 1fr; text-align: center; padding: 48px var(--margin); gap: 28px; }
   .footer-social { justify-content: center; }
 }
 </style>
@@ -642,7 +640,7 @@ const mobBar  = document.getElementById('mobBar');
 const mobBtn  = document.getElementById('mobBtn');
 const mobMenu = document.getElementById('mobMenu');
 
-function isMobile() { return window.innerWidth <= 768; }
+function isMobile() { return window.innerWidth <= 1024; }
 
 function applyLayout() {
   const desk = document.getElementById('deskNav');
