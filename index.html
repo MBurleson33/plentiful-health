@@ -253,9 +253,9 @@ body { font-family: 'Jost', sans-serif; background: var(--cream); color: var(--i
 }
 
 .hero-p {
-  font-size: 20px; font-weight: 300; line-height: 1.85;
+  font-size: 17px; font-weight: 300; line-height: 1.85;
   color: rgba(247,243,238,0.88);
-  max-width: 520px; margin: 0 auto 48px;
+  max-width: 780px; margin: 0 auto 48px;
   opacity: 0; animation: fadeUp 0.8s ease 0.8s forwards;
 }
 
@@ -417,6 +417,19 @@ footer {
   color: var(--cream); text-decoration: none; transition: border-color 0.2s, background 0.2s;
 }
 .footer-social a:hover { border-color: var(--gold); background: rgba(196,169,125,0.12); }
+
+.footer-credit {
+  background: var(--ink);
+  text-align: center;
+  padding: 12px var(--margin);
+  border-top: 1px solid rgba(247,243,238,0.08);
+}
+.footer-credit a {
+  font-size: 11px; font-weight: 300; letter-spacing: 0.08em;
+  color: rgba(247,243,238,0.35); text-decoration: none;
+  transition: color 0.2s;
+}
+.footer-credit a:hover { color: rgba(247,243,238,0.7); }
 
 /* ══════════════════════════════════════
    ANIMATIONS
@@ -637,6 +650,10 @@ footer {
     </a>
   </div>
 </footer>
+
+<div class="footer-credit">
+  <a href="https://treetopbusiness.com/branding.html" target="_blank" rel="noopener noreferrer">Built by Treetop Business Solutions</a>
+</div>
 
 <script>
 // ── Screen reader only helper
