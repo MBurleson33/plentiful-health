@@ -408,7 +408,7 @@ footer {
       </div>
       <div class="form-group">
         <label class="form-label" for="email">Email <span class="req">(required)</span></label>
-        <input type="email" id="email" name="email" class="form-input" required autocomplete="email">
+        <input type="email" id="email" name="_replyto" class="form-input" required autocomplete="email">
       </div>
       <div class="form-group">
         <label class="form-label" for="phone">Phone <span class="req">(required)</span></label>
@@ -419,6 +419,7 @@ footer {
         <textarea id="message" name="message" class="form-textarea" required></textarea>
       </div>
       <input type="hidden" name="_subject" value="Pricing inquiry from Plentiful Health & Wellness website">
+      <input type="text" name="_gotcha" style="display:none">
       <input type="hidden" name="_next" value="https://plentifulhealthok.com/medications.html?sent=true">
       <button type="submit" class="form-submit">Send Message</button>
     </form>
