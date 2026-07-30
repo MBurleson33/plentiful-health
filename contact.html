@@ -483,32 +483,33 @@ footer {
     </div>
 
     <!-- Form -->
-    <div class="contact-form reveal reveal-d1" role="form" aria-label="Contact form">
+    <form class="contact-form reveal reveal-d1" action="https://formspree.io/f/mpqveaed" method="POST">
       <div class="form-row">
         <div class="form-group">
           <label class="form-label" for="fname">First Name <span class="req">(required)</span></label>
-          <input type="text" id="fname" name="fname" class="form-input" required autocomplete="given-name" aria-required="true">
+          <input type="text" id="fname" name="fname" class="form-input" required autocomplete="given-name">
         </div>
         <div class="form-group">
           <label class="form-label" for="lname">Last Name <span class="req">(required)</span></label>
-          <input type="text" id="lname" name="lname" class="form-input" required autocomplete="family-name" aria-required="true">
+          <input type="text" id="lname" name="lname" class="form-input" required autocomplete="family-name">
         </div>
       </div>
       <div class="form-group">
         <label class="form-label" for="email">Email <span class="req">(required)</span></label>
-        <input type="email" id="email" name="email" class="form-input" required autocomplete="email" aria-required="true">
+        <input type="email" id="email" name="email" class="form-input" required autocomplete="email">
       </div>
       <div class="form-group">
         <label class="form-label" for="phone">Phone <span class="req">(required)</span></label>
-        <input type="tel" id="phone" name="phone" class="form-input" required autocomplete="tel" aria-required="true">
+        <input type="tel" id="phone" name="phone" class="form-input" required autocomplete="tel">
       </div>
       <div class="form-group">
         <label class="form-label" for="message">Message <span class="req">(required)</span></label>
-        <textarea id="message" name="message" class="form-textarea" required aria-required="true"></textarea>
+        <textarea id="message" name="message" class="form-textarea" required></textarea>
       </div>
-      <div class="sr-status" role="status" aria-live="polite" id="form-status"></div>
-      <button type="button" class="form-submit" onclick="handleSubmit()">Send Message</button>
-    </div>
+      <input type="hidden" name="_subject" value="New message from Plentiful Health & Wellness website">
+      <input type="hidden" name="_next" value="https://plentifulhealthok.com/contact.html?sent=true">
+      <button type="submit" class="form-submit">Send Message</button>
+    </form>
 
   </section>
 
