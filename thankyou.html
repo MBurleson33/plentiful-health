@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thank You | Plentiful Health & Wellness</title>
+<meta name="robots" content="noindex, follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<!-- Google Analytics GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C8210L6KD8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag("js", new Date());
+  gtag("config", "G-C8210L6KD8");
+</script>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --cream:      #f7f3ee;
+  --cream-dark: #ede6da;
+  --ink:        #1e1a17;
+  --ink-soft:   #3d3530;
+  --warm-brown: #6b5244;
+  --warm-brown-lt: #8c6e5e;
+  --sage:       #4a6e5a;
+  --gold:       #c4a97d;
+  --white:      #ffffff;
+}
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Jost', sans-serif;
+  background: var(--cream);
+  color: var(--ink);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px 28px;
+}
+
+.ty-logo {
+  text-decoration: none;
+  margin-bottom: 60px;
+  opacity: 0;
+  animation: fadeIn 0.6s ease 0.1s forwards;
+}
+.ty-logo img { height: 52px; width: auto; }
+
+.ty-icon {
+  width: 72px; height: 72px;
+  border-radius: 50%;
+  background: var(--sage);
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 32px;
+  opacity: 0;
+  animation: fadeUp 0.7s ease 0.3s forwards;
+}
+.ty-icon svg { width: 32px; height: 32px; }
+
+.ty-eyebrow {
+  font-size: 10px; letter-spacing: 0.45em; text-transform: uppercase;
+  color: var(--sage); margin-bottom: 20px;
+  opacity: 0; animation: fadeUp 0.7s ease 0.45s forwards;
+}
+
+.ty-headline {
+  font-family: 'Cormorant Garamond', serif; font-weight: 300;
+  font-size: clamp(38px, 5vw, 64px); line-height: 1.1;
+  color: var(--ink); margin-bottom: 24px;
+  opacity: 0; animation: fadeUp 0.7s ease 0.6s forwards;
+}
+.ty-headline em { font-style: italic; color: var(--warm-brown); }
+
+.ty-body {
+  font-size: 17px; font-weight: 300; line-height: 1.85;
+  color: var(--ink-soft); max-width: 480px;
+  margin: 0 auto 48px;
+  opacity: 0; animation: fadeUp 0.7s ease 0.75s forwards;
+}
+
+.ty-actions {
+  display: flex; gap: 20px; align-items: center;
+  justify-content: center; flex-wrap: wrap;
+  opacity: 0; animation: fadeUp 0.7s ease 0.9s forwards;
+}
+
+.btn-p {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: var(--ink); color: var(--cream); text-decoration: none;
+  font-size: 12px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase;
+  padding: 15px 32px; min-height: 50px;
+  transition: background 0.2s, transform 0.2s;
+}
+.btn-p:hover { background: var(--warm-brown); transform: translateY(-2px); }
+
+.btn-s {
+  font-size: 12px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--ink-soft); text-decoration: none;
+  border-bottom: 1px solid var(--warm-brown-lt); padding-bottom: 3px;
+  transition: color 0.2s;
+}
+.btn-s:hover { color: var(--warm-brown); }
+
+.ty-deco {
+  position: fixed; bottom: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(to right, transparent, var(--warm-brown), var(--gold), var(--warm-brown), transparent);
+}
+
+.footer-credit {
+  position: fixed; bottom: 4px; left: 0; right: 0;
+  text-align: center;
+}
+.footer-credit a {
+  font-size: 11px; font-weight: 300; letter-spacing: 0.08em;
+  color: rgba(30,26,23,0.25); text-decoration: none;
+  transition: color 0.2s;
+}
+.footer-credit a:hover { color: rgba(30,26,23,0.5); }
+
+@keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; }
+}
+
+@media (max-width: 480px) {
+  .ty-actions { flex-direction: column; align-items: center; }
+  .btn-p { width: 100%; justify-content: center; }
+}
+</style>
+</head>
+<body>
+
+<a href="/" class="ty-logo" aria-label="Plentiful Health and Wellness — home">
+  <img src="images/plenti+ful+-+edit.png" alt="Plentiful Health and Wellness">
+</a>
+
+<div class="ty-icon" aria-hidden="true">
+  <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="20 6 9 17 4 12"/>
+  </svg>
+</div>
+
+<p class="ty-eyebrow">Message Received</p>
+
+<h1 class="ty-headline">Thank you for <em>reaching out!</em></h1>
+
+<p class="ty-body">We've received your message and will be in touch shortly. In the meantime, feel free to explore our site or book a consultation directly.</p>
+
+<div class="ty-actions">
+  <a href="index.html#book" class="btn-p">Book a Consultation <span aria-hidden="true">→</span></a>
+  <a href="/" class="btn-s">Back to Home</a>
+</div>
+
+<div class="ty-deco" aria-hidden="true"></div>
+
+<div class="footer-credit">
+  <a href="https://treetopbusiness.com/branding.html" target="_blank" rel="noopener noreferrer">Built by Treetop Business Solutions</a>
+</div>
+
+</body>
+</html>
